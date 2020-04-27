@@ -106,7 +106,7 @@ breaklines}
 		\LARGE{\dokumentenTitel} \\
 		\small
 \end{center}
-ANMERKUNG: Marius Birk(Tutorium B) und Pieter Vogt (Tutorium G) arbeiten zusammen und geben gemeinsam den bearbeiteten Zettel ab.
+ANMERKUNG: Marius Birk(Tutorium B) und Pieter Vogt (Tutorium G) arbeiten zusammen und geben gemeinsam den bearbeiteten Zettel ab. Parallel wurde von jedem Teilnehmer der Gruppe ein Programm geschrieben, sodass es in der Abgabe zu Kollisionen in den Objektbezeichnungen kommen kann. Jeder Teilnehmer kann aber im Notfall eine funktionierende Variante seines Programmes vorweisen.
 \section*{Aufgabe 1}
 \subsection*{UML-Architektur}
 \includegraphics[width=\linewidth]{Uebung1}
@@ -212,8 +212,37 @@ public class Plant {
 }
 \end{lstlisting}
 Der Code für das Programm 'Biotest' sieht aus wie folgt:
+\begin{lstlisting}
+public class Bio_Test {
+   public static void main(String[] args){
+       Pflanzen_Tiere.Pflanzen Gras = new Pflanzen_Tiere.Pflanzen();
+       Gras.setBeschreibung("Gras ist Gruen");
 
-Die UML-Architektur der Objektebene nach ausführung von 'Biotest' sieht wie folgt aus:
+       Pflanzen_Tiere.Pflanzen Beeren = new Pflanzen_Tiere.Pflanzen();
+       Beeren.setBeschreibung("Beeren sind rot");
+
+       Pflanzen_Tiere.Tiere Zebra = new Pflanzen_Tiere.Tiere();
+       Zebra.setName("Zebra");
+       Zebra.setPf_futter("Gras");
+
+
+       Pflanzen_Tiere.Tiere Loewen = new Pflanzen_Tiere.Tiere();
+       Loewen.setName("Loewen");
+       Loewen.setF_futter("Zebras");
+
+       Pflanzen_Tiere.Tiere Baeren = new Pflanzen_Tiere.Tiere();
+       Baeren.setName("Baeren");
+       Baeren.setPf_futter("Beeren");
+       Baeren.setF_futter("Fische");
+
+       Zebra.ausgabe();
+       Loewen.ausgabe();
+       Baeren.ausgabe();
+   }
+}
+\end{lstlisting}
+Die UML-Architektur der Objektebene nach Ausführung von 'Biotest' sieht wie folgt aus:\\
+\includegraphics{objektdiagramm}
 
 
 \end{document}
