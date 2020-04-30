@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>210</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Tanz
+--
+name: String
+takt: String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>330</y>
+      <w>100</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Standart-Tanz
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>330</y>
+      <w>100</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Latein-Tanz
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>110</x>
+      <y>200</y>
+      <w>100</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Figur
+--
+name: String
+text: String
+sequenz: Figur</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>200</y>
+      <w>220</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..n
+m2=1..n
+besitzt</panel_attributes>
+    <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>40</x>
+      <y>140</y>
+      <w>150</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+mehrere kleine</panel_attributes>
+    <additional_attributes>70.0;70.0;10.0;70.0;10.0;10.0;130.0;10.0;130.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>140</x>
+      <y>890</y>
+      <w>130</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>:Standart-Tanz
+--
+name= "Walzer"
+takt="3/4"</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>950</x>
+      <y>870</y>
+      <w>110</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>:Standart-Tanz
+--
+name="Tango"
+takt="4/4"</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>310</x>
+      <y>740</y>
+      <w>200</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>:Standart-Tanz
+--
+name="Quickstep"
+takt="4/4"</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>540</x>
+      <y>710</y>
+      <w>190</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>:Latein-Tanz
+--
+name="ChaChaCha"
+takt="4/4"</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>710</y>
+      <w>190</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>:Latein-Tanz
+--
+name="Rumba"
+takt="4/4"</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>960</x>
+      <y>710</y>
+      <w>190</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>:Latein-Tanz
+--
+name="Jive"
+takt="4/4"</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>810</x>
+      <y>1010</y>
+      <w>140</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>:Figur
+--
+name="Grundschritt"
+beschreibung=""</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>1010</y>
+      <w>140</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>:Figur
+--
+name="Rechtsdrehung"
+beschreibung=""</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>1010</y>
+      <w>140</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>:Figur
+--
+name="Kreiseldrehung"
+beschreibung=""</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>980</x>
+      <y>1010</y>
+      <w>140</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>:Figur
+--
+name="Promenade"
+beschreibung=""</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>500</x>
+      <y>1010</y>
+      <w>140</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>:Figur
+--
+name="Chassé"
+beschreibung=""</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>650</x>
+      <y>1010</y>
+      <w>140</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>:Figur
+--
+name="Fan"
+beschreibung=""</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>1010</y>
+      <w>140</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>:Figur
+--
+name="Wischer"
+sequenz=Promenade, Chassé
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>500</x>
+      <y>270</y>
+      <w>50</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>270</y>
+      <w>40</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>20.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>930</x>
+      <y>920</y>
+      <w>70</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>990</x>
+      <y>920</y>
+      <w>70</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>40</x>
+      <y>940</y>
+      <w>140</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>260</x>
+      <y>940</y>
+      <w>170</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>940</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>800</y>
+      <w>80</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>800</y>
+      <w>400</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;380.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>690</x>
+      <y>760</y>
+      <w>170</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>840</x>
+      <y>760</y>
+      <w>30</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>760</y>
+      <w>80</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>60.0;250.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>710</x>
+      <y>760</y>
+      <w>110</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;250.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>870</x>
+      <y>760</y>
+      <w>120</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;250.0</additional_attributes>
+  </element>
+</diagram>
