@@ -1,17 +1,17 @@
 import java.util.ArrayList;
+
 class Dance {
     private String name;
     private String beat;
-    private Object[] figures = new Object[3];
+    private ArrayList figures = new ArrayList();
 
-    public Object[] getFigures() {
-        return figures;
+    public void getFigures() {
+        System.out.println(this.figures);
+
     }
 
-    public void setFigures(Object[] figures) {
-        for(int i = 0; i< figures.length; i++){
-            this.figures[i] = figures[i];
-        }
+    public void setFigures(String Figures) {
+        this.figures.add(Figures);
     }
 
     public String getName() {
@@ -29,14 +29,18 @@ class Dance {
     public void setBeat(String beat) {
         this.beat = beat;
     }
-}
-class StandardDance extends Dance{
 
 }
-class LatinDance extends Dance{
+
+class StandardDance extends Dance {
 
 }
-class Figure{
+
+class LatinDance extends Dance {
+
+}
+
+class Figure {
     private String name;
     private String text;
 
@@ -55,18 +59,20 @@ class Figure{
     public void setText(String text) {
         this.text = text;
     }
+
 }
-class Sequence extends Figure{
-    private String name;
-    public ArrayList<Object> figures = new ArrayList<Object>();
-    public void setSequence(ArrayList sequence){
+
+class Sequence extends Figure {
+    public ArrayList<String> figures = new ArrayList<String>();
+
+    public void setSequence(ArrayList sequence) {
         this.figures = sequence;
     }
-    public boolean add(Figure figure){
-        if( figure instanceof Sequence){
+
+    public boolean add(String figure) {
+        if (figures.contains(figure)) {
             return false;
-        }
-        else{
+        } else {
             figures.add(figure);
             return true;
         }
