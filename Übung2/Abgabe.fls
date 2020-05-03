@@ -1,9 +1,9 @@
-PWD c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/�bungen/�bung2
+PWD e:/GitHub/Uni/Universit�t/inf031/�bung2
 INPUT c:/texlive/2020/texmf.cnf
 INPUT c:/texlive/2020/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Abgabe.tex
-OUTPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Abgabe.log
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.tex
+OUTPUT e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.log
 INPUT c:/texlive/2020/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2020/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2020/texmf-dist/tex/latex/base/size12.clo
@@ -255,23 +255,23 @@ INPUT c:/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT c:/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 INPUT c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
-INPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Abgabe.aux
-INPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Abgabe.aux
-OUTPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Abgabe.aux
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.aux
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.aux
+OUTPUT e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.aux
 INPUT c:/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT c:/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT c:/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
 INPUT c:/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
 INPUT c:/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 INPUT c:/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
-INPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Abgabe.out
-INPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Abgabe.out
-INPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Abgabe.out
-INPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Abgabe.out
-OUTPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Abgabe.pdf
-INPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Abgabe.out
-INPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Abgabe.out
-OUTPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Abgabe.out
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.out
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.out
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.out
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.out
+OUTPUT e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.pdf
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.out
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.out
+OUTPUT e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.out
 INPUT c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
@@ -314,20 +314,29 @@ INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/stmaryrd/stmary10.tfm
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Klassendiagramm A_1.jpg
-INPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Klassendiagramm A_1.jpg
-INPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Klassendiagramm A_1.jpg
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Objektdiagramm A_2.jpg
-INPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Objektdiagramm A_2.jpg
-INPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Objektdiagramm A_2.jpg
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Von Pieter/Klassendiagramm Sternendatenbank.png
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Von Pieter/Klassendiagramm Sternendatenbank.png
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Von Pieter/Klassendiagramm Sternendatenbank.png
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Von Pieter/Objektdiagramm Test1 Sternendatenbank.png
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Von Pieter/Objektdiagramm Test1 Sternendatenbank.png
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Von Pieter/Objektdiagramm Test1 Sternendatenbank.png
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Von Pieter/Objektdiagramm Test2 Sternendatenbank.png
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Von Pieter/Objektdiagramm Test2 Sternendatenbank.png
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Von Pieter/Objektdiagramm Test2 Sternendatenbank.png
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Von Pieter/Objektdiagramm Test3 Sternendatenbank.png
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Von Pieter/Objektdiagramm Test3 Sternendatenbank.png
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Von Pieter/Objektdiagramm Test3 Sternendatenbank.png
+INPUT c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Objektdiagramm A_2.jpg
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Objektdiagramm A_2.jpg
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Objektdiagramm A_2.jpg
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
-INPUT c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Abgabe.aux
-INPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Abgabe.out
-INPUT c:/Users/Marius/OneDrive - uni-oldenburg.de/Uni/inf031 OMP/Übungen/Übung2/Abgabe.out
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.aux
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.out
+INPUT e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.out
 INPUT c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
