@@ -4,7 +4,6 @@
 \usepackage{hyperref}
 \usepackage{ngerman}
 \usepackage{graphicx}
-\graphicspath{{Von Pieter/}}
 \usepackage{tikz} % Automaten, Graphen, ... zeichnen
 \usepackage{tikz-qtree} % Paket fuer Tikz Graphen-Baeume
 \usetikzlibrary{arrows,shapes,automata} % Bestimmte tikz-Befehle benutzen
@@ -18,38 +17,9 @@
 \usepackage{caption}
 \usepackage{totpages}
 
-%Java Code für listing definiert
-\lstset{language=Java,
-basicstyle=\small \ttfamily,
-keywordstyle=\color{javapurple}\bfseries,
-stringstyle=\color{javared},
-commentstyle=\color{javagreen},
-morecomment=[s][\color{javadocblue}]{/**}{*/},
-numbers=left,
-numberstyle=\tiny\color{black},
-stepnumber=1,
-numbersep=10pt,
-tabsize=1,
-showspaces=false,
-showstringspaces=false,
-breaklines}
-\lstset{literate=%
-  {Ö}{{\"O}}1
-  {Ä}{{\"A}}1
-  {Ü}{{\"U}}1
-  {ß}{{\ss}}1
-  {ü}{{\"u}}1
-  {ä}{{\"a}}1
-  {ö}{{\"o}}1
-}
-
 % Beliebige RGB Farben definieren:
 \definecolor{gold}{rgb}{0.83, 0.69, 0.15}
 \definecolor{magenta}{rgb}{0.79, 0.08, 0.48}
-\definecolor{javared}{rgb}{0.6,0,0} % for strings
-\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
-\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
-\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
 
 % Titel in Kopfzeilen
 \usepackage{fancyhdr}
@@ -122,39 +92,8 @@ breaklines}
 		$($Alle allgemeinen Definitionen aus der Vorlesung haben in diesem Dokument bestand, es sei den sie erhalten eine explizit andere Definition.$)$
     \end{center}
 
-
 	\section{Aufgabe 1}
-
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[scale=0.5]{Klassendiagramm Sternendatenbank}
-	\caption{Klassendiagramm der Sternendatenbank}
-	\label{fig1}
-\end{figure}
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[scale=0.5]{Objektdiagramm Test1 Sternendatenbank}
-	\caption{Objektdiagramm: Test 1}
-	\label{fig2}
-\end{figure}
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[scale=0.5]{Objektdiagramm Test2 Sternendatenbank}
-	\caption{Objektdiagramm: Test 2}
-	\label{fig3}
-\end{figure}
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[scale=0.5]{Objektdiagramm Test3 Sternendatenbank}
-	\caption{Objektdiagramm: Test 3}
-	\label{fig4}
-\end{figure}
-
-
+        \includegraphics[width=12cm]{Klassendiagramm A_1}
 
 	
     \section{Aufgabe 2}
@@ -342,35 +281,27 @@ public class DanceDatabase {
 			\end{verbatim}
 	\section{Aufgabe 3}
 			\subsection{a)}
+			\begin{verbatim}
+				public class Out {
+    public void out(String s){
+        System.out.println(s);
+    }
+    public void out(boolean b){
+        System.out.println(b);
+    }
+    public void out(int i){
+        System.out.println(i);
+    }
+    public void out(double d){
+        System.out.println(d);
+    }
+    public void out(char c){
+        System.out.println(c);
+    }
 
-\begin{lstlisting}
-public class Out {
-
-   public static void out(boolean bool) {
-      System.out.println(bool);
-   }
-
-   public static void out(int number) {
-      System.out.println(number);
-   }
-
-   public static void out(double number) {
-      System.out.println(number);
-   }
-
-   public static void out(char character) {
-      System.out.println(character);
-   }
-
-   public static void out(String string) {
-      System.out.println(string);
-   }
-
-   public static void out(Object obj) {
-      System.out.println(obj);
-   }
-
+    public void out(Object o){
+        System.out.println(o);
+    }
 }
-\end{lstlisting}
-
+			\end{verbatim}
 \end{document}
