@@ -17,6 +17,12 @@
 \usepackage{caption}
 \usepackage{totpages}
 
+\usepackage{circuitikz}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{tikz}
+
 % Beliebige RGB Farben definieren:
 \definecolor{gold}{rgb}{0.83, 0.69, 0.15}
 \definecolor{magenta}{rgb}{0.79, 0.08, 0.48}
@@ -92,15 +98,15 @@
 		$($Alle allgemeinen Definitionen aus der Vorlesung haben in diesem Dokument bestand, es sei den sie erhalten eine explizit andere Definition.$)$
     \end{center}
 
-	\section{Aufgabe 1}
-		\subsection{Klassendiagramm}
-		\includegraphics[width=7cm]{Von Pieter/Klassendiagramm Sternendatenbank}
-		\subsection{Objektdiagramme}
-		\includegraphics[width=7cm]{Von Pieter/Objektdiagramm Test1 Sternendatenbank}\\ 
-		\includegraphics[width=13cm]{Von Pieter/Objektdiagramm Test2 Sternendatenbank}\\
-		\includegraphics[width=13cm]{Von Pieter/Objektdiagramm Test3 Sternendatenbank}\\
+		\begin{figure}[h]
+			\section{Aufgabe 1}
 
-	
+			\subfigure[Klassendiagramm Star, StarsDatabase]{\includegraphics[width=0.2\textwidth]{Von Pieter/Klassendiagramm Sternendatenbank}}
+			\subfigure[Objektdiagramm Sirius]{\includegraphics[width=0.3\textwidth]{Von Pieter/Objektdiagramm Test1 Sternendatenbank}}
+			\subfigure[Objektdiagramm Sirius, Alpha Centauri]{\includegraphics[width=0.4\textwidth]{Von Pieter/Objektdiagramm Test2 Sternendatenbank}}
+			\subfigure[Objektdiagramm Alpha Centauri, Sirius]{\includegraphics[width=0.4\textwidth]{Von Pieter/Objektdiagramm Test3 Sternendatenbank}}
+		\end{figure}
+	\newpage
     \section{Aufgabe 2}
         \subsection{a)}
             \includegraphics[width=18cm]{Objektdiagramm A_2}\\\\
@@ -108,19 +114,19 @@
                 \subsubsection{Dance Code}
                     \begin{verbatim}
 						import java.util.ArrayList;
+
 						class Dance {
 							private String name;
 							private String beat;
-							private Object[] figures = new Object[3];
+							private ArrayList figures = new ArrayList();
 						
-							public Object[] getFigures() {
-								return figures;
+							public void getFigures() {
+								System.out.println(this.figures);
+						
 							}
 						
-							public void setFigures(Object[] figures) {
-								for(int i = 0; i< figures.length; i++){
-									this.figures[i] = figures[i];
-								}
+							public void setFigures(String Figures) {
+								this.figures.add(Figures);
 							}
 						
 							public String getName() {
@@ -138,14 +144,18 @@
 							public void setBeat(String beat) {
 								this.beat = beat;
 							}
-						}
-						class StandardDance extends Dance{
 						
 						}
-						class LatinDance extends Dance{
+						
+						class StandardDance extends Dance {
 						
 						}
-						class Figure{
+						
+						class LatinDance extends Dance {
+						
+						}
+						
+						class Figure {
 							private String name;
 							private String text;
 						
@@ -164,18 +174,20 @@
 							public void setText(String text) {
 								this.text = text;
 							}
+						
 						}
-						class Sequence extends Figure{
-							private String name;
-							public ArrayList<Object> figures = new ArrayList<Object>();
-							public void setSequence(ArrayList sequence){
+						
+						class Sequence extends Figure {
+							public ArrayList<String> figures = new ArrayList<String>();
+						
+							public void setSequence(ArrayList sequence) {
 								this.figures = sequence;
 							}
-							public boolean add(Figure figure){
-								if( figure instanceof Sequence){
+						
+							public boolean add(String figure) {
+								if (figures.contains(figure)) {
 									return false;
-								}
-								else{
+								} else {
 									figures.add(figure);
 									return true;
 								}
@@ -185,104 +197,84 @@
 				\subsubsection{Dance Database}
 					\begin{verbatim}
 						import java.io.FileReader;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+						import java.util.ArrayList;
 
-public class DanceDatabase {
-    public static void main(String[] args) {
-        Figure Righturn = new Figure();
-        Righturn.setName("Rightturn");
-        Righturn.setText("Turning right");
-
-        Figure Circle = new Figure();
-        Circle.setName("Circle");
-        Circle.setText("Circle");
-
-        Figure Whisk = new Figure();
-        Whisk.setName("Whisk");
-
-        Figure Chasse = new Figure();
-        Chasse.setName("Chassé");
-        Chasse.setText("Chassé");
-
-        Figure Fan = new Figure();
-        Fan.setText("Fan");
-        Fan.setName("Fan");
-
-        Figure Basic = new Figure();
-        Basic.setName("Basic Movement");
-        Basic.setText("Basic Movement");
-
-        Figure Promenade = new Figure();
-        Promenade.setText("Promenade");
-        Promenade.setName("Promenade");
-
-        Sequence S_Whisk = new Sequence();
-        if(S_Whisk.add(Chasse)){
-            System.out.println("Hinzufügen erfolgreich");
-            //Um diese Prüfung zu realisieren musste das Objekt Array auf eine Object ArrayList geändert werden, in dem die Figuren
-            //gespeichert werden.
-        }
-        else{
-            System.out.println("Hinzufügen nicht erfolgreich");
-
-        }
-        StandardDance Walzer = new StandardDance();
-        Walzer.setName("Walzer");
-        Walzer.setBeat("3/4");
-        Object[] figures = new Object[]{Righturn, Circle, Whisk};
-        Walzer.setFigures(figures);
-        figures = null;
-
-        StandardDance Tango = new StandardDance();
-        Tango.setBeat("4/4");
-        Tango.setName("Tango");
-        figures= new Object[]{Basic, Promenade};
-        Tango.setFigures(figures);
-        figures= null;
-
-        StandardDance Quickstep = new StandardDance();
-        Tango.setBeat("4/4");
-        Tango.setName("Quickstep");
-        figures = new Object[]{Basic, Circle};
-        Tango.setFigures(figures);
-        figures= null;
-
-        LatinDance Cha = new LatinDance();
-        Cha.setBeat("4/4");
-        Cha.setName("ChaChaCha");
-        figures = new Object[]{Basic, Fan};
-        Cha.setFigures(figures);
-        figures= null;
-
-        LatinDance Rumba = new LatinDance();
-        Rumba.setBeat("4/4");
-        Rumba.setName("Rumba");
-        figures = new Object[]{Basic, Fan};
-        Cha.setFigures(figures);
-        figures= null;
-
-        LatinDance Jive = new LatinDance();
-        Jive.setBeat("4/4");
-        Jive.setName("ChaChaCha");
-        figures = new Object[]{Basic};
-        Jive.setFigures(figures);
-        figures= null;
-    }
-}
+						public class DanceDatabase {
+							public static void main(String[] args) {
+								ArrayList<String> Figures = new ArrayList<String>();
+								Figures.add("Rightturn");
+								Figures.add("Basic Movement");
+								Figures.add("Spin Turn");
+								Figures.add("Promenade");
+								Figures.add("Chasse");
+								Figures.add("Fan");
+								Figures.add("Whisk");
+						
+								Sequence S_Whisk = new Sequence();
+								if (S_Whisk.add("Chasse")) {
+									System.out.println("Hinzufügen erfolgreich");
+									//Um diese Prüfung zu realisieren musste das Objekt Array auf eine Object ArrayList geändert werden, in dem die Figuren
+									//gespeichert werden.
+								} else {
+									System.out.println("Hinzufügen nicht erfolgreich");
+								}
+								if (S_Whisk.add("Promenade")) {
+									System.out.println("Hinzufügen erfolgreich");
+									//Um diese Prüfung zu realisieren musste das Objekt Array auf eine Object ArrayList geändert werden, in dem die Figuren
+									//gespeichert werden.
+								} else {
+									System.out.println("Hinzufügen nicht erfolgreich");
+								}
+								StandardDance Walzer = new StandardDance();
+								Walzer.setName("Walzer");
+								Walzer.setBeat("3/4");
+								Walzer.setFigures(Figures.get(0));
+								Walzer.setFigures(Figures.get(2));
+								Walzer.setFigures(Figures.get(6));
+						
+								StandardDance Tango = new StandardDance();
+								Tango.setBeat("4/4");
+								Tango.setName("Tango");
+								Tango.setFigures(Figures.get(1));
+								Tango.setFigures(Figures.get(3));
+						
+								StandardDance Quickstep = new StandardDance();
+								Quickstep.setBeat("4/4");
+								Quickstep.setName("Quickstep");
+								Quickstep.setFigures(Figures.get(1));
+								Quickstep.setFigures(Figures.get(2));
+						
+								LatinDance Cha = new LatinDance();
+								Cha.setBeat("4/4");
+								Cha.setName("ChaChaCha");
+								Cha.setFigures(Figures.get(1));
+								Cha.setFigures(Figures.get(5));
+						
+								LatinDance Rumba = new LatinDance();
+								Rumba.setBeat("4/4");
+								Rumba.setName("Rumba");
+								Rumba.setFigures(Figures.get(1));
+								Rumba.setFigures(Figures.get(5));
+						
+								LatinDance Jive = new LatinDance();
+								Jive.setBeat("4/4");
+								Jive.setName("ChaChaCha");
+								Jive.setFigures(Figures.get(1));
+							}
+						
+						}
 
 					\end{verbatim}
 			\subsection{c)}
 			\begin{verbatim}
-				public boolean add(Figure figure){
-        if( figure instanceof Sequence){
-            return false;
-        }
-        else{
-            figures.add(figure);
-            return true;
-        }
-    }
+				public boolean add(String figure) {
+					if (figures.contains(figure)) {
+						return false;
+					} else {
+						figures.add(figure);
+						return true;
+					}
+				}
 			\end{verbatim}
 	\section{Aufgabe 3}
 			\subsection{a)}

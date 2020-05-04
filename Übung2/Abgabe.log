@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.4.27)  3 MAY 2020 20:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.4.27)  4 MAY 2020 08:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -638,40 +638,110 @@ Package caption Info: listings package is loaded.
 Package caption Info: wrapfig package is loaded.
 ) (c:/texlive/2020/texmf-dist/tex/latex/totpages/totpages.sty
 Package: totpages 2005/09/19 v2.00 Totpages Package (muewi)
+) (c:/texlive/2020/texmf-dist/tex/latex/circuitikz/circuitikz.sty
+Package: circuitikz 2020/04/24{} The CircuiTikz circuit drawing package version 1.1.1
+ (c:/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+) (c:/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfarrowinset=\dimen311
+\pgfarrowlength=\dimen312
+\pgfarrowwidth=\dimen313
+\pgfarrowlinewidth=\dimen314
+) (c:/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybending.code.tex
+File: tikzlibrarybending.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+ (c:/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmodulebending.code.tex
+File: pgfmodulebending.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+ (c:/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmodulenonlineartransformations.code.tex
+File: pgfmodulenonlineartransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgftransformnonlinearflatness=\dimen315
+) (c:/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibrarycurvilinear.code.tex
+File: pgflibrarycurvilinear.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@curvilinear@time@a=\dimen316
+\pgf@curvilinear@length@a=\dimen317
+\pgf@curvilinear@length@b=\dimen318
+\pgf@curvilinear@length@c=\dimen319
+\pgf@curvilinear@length@d=\dimen320
+)
+\pgf@arrows@the@rigidity=\dimen321
+)) (c:/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfpu.code.tex (c:/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)) (c:/texlive/2020/texmf-dist/tex/generic/circuitikz/pgfcirc.defines.tex
+\pgf@circ@count@a=\count311
+\pgf@circ@count@b=\count312
+\pgf@circ@count@c=\count313
+\pgf@circ@res@up=\dimen322
+\pgf@circ@res@down=\dimen323
+\pgf@circ@res@zero=\dimen324
+\pgf@circ@res@left=\dimen325
+\pgf@circ@res@right=\dimen326
+\pgf@circ@res@other=\dimen327
+\pgf@circ@res@step=\dimen328
+\pgf@circ@res@temp=\dimen329
+\pgfstartlinewidth=\dimen330
+\pgf@circ@Rlen=\dimen331
+\pgf@circ@scaled@Rlen=\dimen332
+) (c:/texlive/2020/texmf-dist/tex/generic/circuitikz/pgfcircutils.tex) (c:/texlive/2020/texmf-dist/tex/generic/circuitikz/pgfcircshapes.tex) (c:/texlive/2020/texmf-dist/tex/generic/circuitikz/pgfcircmonopoles.tex) (c:/texlive/2020/texmf-dist/tex/generic/circuitikz/pgfcircbipoles.tex) (c:/texlive/2020/texmf-dist/tex/generic/circuitikz/pgfcirctripoles.tex
+\pgf@circ@res@count=\count314
+) (c:/texlive/2020/texmf-dist/tex/generic/circuitikz/pgfcircquadpoles.tex) (c:/texlive/2020/texmf-dist/tex/generic/circuitikz/pgfcircmultipoles.tex) (c:/texlive/2020/texmf-dist/tex/generic/circuitikz/pgfcirclabel.tex) (c:/texlive/2020/texmf-dist/tex/generic/circuitikz/pgfcircvoltage.tex) (c:/texlive/2020/texmf-dist/tex/generic/circuitikz/pgfcirccurrent.tex) (c:/texlive/2020/texmf-dist/tex/generic/circuitikz/pgfcircflow.tex) (c:/texlive/2020/texmf-dist/tex/generic/circuitikz/pgfcircpath.tex)
+
+Package circuitikz Warning: You did not specify one of the voltage directions:
+(circuitikz)                  oldvoltagedirection, nooldvoltagedirection, 
+(circuitikz)                  RPvoltages or EFvoltages 
+(circuitikz)                Default directions may have changed, 
+(circuitikz)                please check the manual.
+
+) (c:/texlive/2020/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip58
+\subfigcapskip=\skip59
+\subfigcaptopadj=\dimen333
+\subfigbottomskip=\skip60
+\subfigcapmargin=\dimen334
+\subfiglabelskip=\skip61
+\c@subfigure=\count315
+\c@lofdepth=\count316
+\c@subtable=\count317
+\c@lotdepth=\count318
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(c:/texlive/2020/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip62
+\subfig@bottom=\skip63
 ) (c:/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
-\f@nch@headwidth=\skip58
-\f@nch@O@elh=\skip59
-\f@nch@O@erh=\skip60
-\f@nch@O@olh=\skip61
-\f@nch@O@orh=\skip62
-\f@nch@O@elf=\skip63
-\f@nch@O@erf=\skip64
-\f@nch@O@olf=\skip65
-\f@nch@O@orf=\skip66
+\f@nch@headwidth=\skip64
+\f@nch@O@elh=\skip65
+\f@nch@O@erh=\skip66
+\f@nch@O@olh=\skip67
+\f@nch@O@orh=\skip68
+\f@nch@O@elf=\skip69
+\f@nch@O@erf=\skip70
+\f@nch@O@olf=\skip71
+\f@nch@O@orf=\skip72
 ) (c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count311
+\l__kernel_color_stack_int=\count319
 \l__pdf_internal_box=\box130
 ) (e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.aux)
 \openout1 = `Abgabe.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -708,7 +778,7 @@ LaTeX Font Info:    ... okay on input line 58.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box131
-Package hyperref Info: Link coloring OFF on input line 58.
+Package hyperref Info: Link coloring OFF on input line 64.
 (c:/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (c:/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
@@ -716,27 +786,27 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (c:/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count312
+\c@section@level=\count320
 )
-LaTeX Info: Redefining \ref on input line 58.
-LaTeX Info: Redefining \pageref on input line 58.
-LaTeX Info: Redefining \nameref on input line 58.
+LaTeX Info: Redefining \ref on input line 64.
+LaTeX Info: Redefining \pageref on input line 64.
+LaTeX Info: Redefining \nameref on input line 64.
  (e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.out) (e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.out)
 \@outlinefile=\write4
 \openout4 = `Abgabe.out'.
 
  (c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count313
-\scratchdimen=\dimen311
+\scratchcounter=\count321
+\scratchdimen=\dimen335
 \scratchbox=\box132
-\nofMPsegments=\count314
-\nofMParguments=\count315
+\nofMPsegments=\count322
+\nofMParguments=\count323
 \everyMPshowfont=\toks43
-\MPscratchCnt=\count316
-\MPscratchDim=\dimen312
-\MPnumerator=\count317
-\makeMPintoPDFobject=\count318
+\MPscratchCnt=\count324
+\MPscratchDim=\dimen336
+\MPnumerator=\count325
+\makeMPintoPDFobject=\count326
 \everyMPtoPDFconversion=\toks44
 ) (c:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -744,95 +814,116 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (c:/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )) ABD: EveryShipout initializing macros
-\c@lstlisting=\count319
+\c@lstlisting=\count327
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 64.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 70.
  (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 64.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 70.
  (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 64.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 70.
  (c:/texlive/2020/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-<Von Pieter/Klassendiagramm Sternendatenbank.png, id=51, 250.9375pt x 552.0625pt>
+<Von Pieter/Klassendiagramm Sternendatenbank.png, id=43, 250.9375pt x 552.0625pt>
 File: Von Pieter/Klassendiagramm Sternendatenbank.png Graphic file (type png)
 <use Von Pieter/Klassendiagramm Sternendatenbank.png>
-Package pdftex.def Info: Von Pieter/Klassendiagramm Sternendatenbank.png  used on input line 97.
-(pdftex.def)             Requested size: 199.16928pt x 438.19684pt.
-<Von Pieter/Objektdiagramm Test1 Sternendatenbank.png, id=52, 250.9375pt x 371.3875pt>
+Package pdftex.def Info: Von Pieter/Klassendiagramm Sternendatenbank.png  used on input line 104.
+(pdftex.def)             Requested size: 85.35696pt x 187.78299pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--104
+[]\OT1/cmr/m/n/10 (a) Klas-sen-dia-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--104
+\OT1/cmr/m/n/10 gramm Star,
+ []
+
+<Von Pieter/Objektdiagramm Test1 Sternendatenbank.png, id=44, 250.9375pt x 371.3875pt>
 File: Von Pieter/Objektdiagramm Test1 Sternendatenbank.png Graphic file (type png)
 <use Von Pieter/Objektdiagramm Test1 Sternendatenbank.png>
-Package pdftex.def Info: Von Pieter/Objektdiagramm Test1 Sternendatenbank.png  used on input line 99.
-(pdftex.def)             Requested size: 199.16928pt x 294.78696pt.
-<Von Pieter/Objektdiagramm Test2 Sternendatenbank.png, id=53, 481.8pt x 361.35pt>
+Package pdftex.def Info: Von Pieter/Objektdiagramm Test1 Sternendatenbank.png  used on input line 105.
+(pdftex.def)             Requested size: 128.0387pt x 189.50711pt.
+<Von Pieter/Objektdiagramm Test2 Sternendatenbank.png, id=45, 481.8pt x 361.35pt>
 File: Von Pieter/Objektdiagramm Test2 Sternendatenbank.png Graphic file (type png)
 <use Von Pieter/Objektdiagramm Test2 Sternendatenbank.png>
-Package pdftex.def Info: Von Pieter/Objektdiagramm Test2 Sternendatenbank.png  used on input line 100.
-(pdftex.def)             Requested size: 369.88582pt x 277.42433pt.
-<Von Pieter/Objektdiagramm Test3 Sternendatenbank.png, id=54, 491.8375pt x 361.35pt>
+Package pdftex.def Info: Von Pieter/Objektdiagramm Test2 Sternendatenbank.png  used on input line 106.
+(pdftex.def)             Requested size: 170.71393pt x 128.03477pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--106
+[]\OT1/cmr/m/n/10 (c) Ob-jekt-dia-gramm Si-ri-us, Al-pha
+ []
+
+<Von Pieter/Objektdiagramm Test3 Sternendatenbank.png, id=46, 491.8375pt x 361.35pt>
 File: Von Pieter/Objektdiagramm Test3 Sternendatenbank.png Graphic file (type png)
 <use Von Pieter/Objektdiagramm Test3 Sternendatenbank.png>
-Package pdftex.def Info: Von Pieter/Objektdiagramm Test3 Sternendatenbank.png  used on input line 101.
-(pdftex.def)             Requested size: 369.88582pt x 271.7617pt.
+Package pdftex.def Info: Von Pieter/Objektdiagramm Test3 Sternendatenbank.png  used on input line 107.
+(pdftex.def)             Requested size: 170.71393pt x 125.42126pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--102
-
+Underfull \hbox (badness 10000) in paragraph at lines 104--108
+[] [][] [][]
  []
 
 [1.1
 
-{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <e:/GitHub/Uni/Universität/inf031/Übung2/Von Pieter/Klassendiagramm Sternendatenbank.png (PNG copy)>] [2.2 <e:/GitHub/Uni/Universität/inf031/Übung2/Von Pieter/Objektdiagramm Test1 Sternendatenbank.png (PNG copy)> <e:/GitHub/Uni/Universität/inf031/Übung2/Von Pieter/Objektdiagramm Test2 Sternendatenbank.png (PNG copy)>]
-<Objektdiagramm A_2.jpg, id=71, 896.59969pt x 316.18124pt>
+{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <e:/GitHub/Uni/Universität/inf031/Übung2/Von Pieter/Klassendiagramm Sternendatenbank.png (PNG copy)> <e:/GitHub/Uni/Universität/inf031/Übung2/Von Pieter/Objektdiagramm Test1 Sternendatenbank.png (PNG copy)> <e:/GitHub/Uni/Universität/inf031/Übung2/Von Pieter/Objektdiagramm Test2 Sternendatenbank.png (PNG copy)> <e:/GitHub/Uni/Universität/inf031/Übung2/Von Pieter/Objektdiagramm Test3 Sternendatenbank.png (PNG copy)>]
+<Objektdiagramm A_2.jpg, id=62, 896.59969pt x 316.18124pt>
 File: Objektdiagramm A_2.jpg Graphic file (type jpg)
 <use Objektdiagramm A_2.jpg>
-Package pdftex.def Info: Objektdiagramm A_2.jpg  used on input line 106.
+Package pdftex.def Info: Objektdiagramm A_2.jpg  used on input line 112.
 (pdftex.def)             Requested size: 512.1496pt x 180.61113pt.
 
-Overfull \hbox (85.35825pt too wide) in paragraph at lines 106--107
+Overfull \hbox (85.35825pt too wide) in paragraph at lines 112--113
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--107
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--107
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
  []
 
-[3.3 <e:/GitHub/Uni/Universität/inf031/Übung2/Von Pieter/Objektdiagramm Test3 Sternendatenbank.png (PNG copy)> <e:/GitHub/Uni/Universität/inf031/Übung2/Objektdiagramm A_2.jpg>] [4.4] [5.5]
-Overfull \hbox (382.13405pt too wide) in paragraph at lines 274--274
-[]            \OT1/cmtt/m/n/12 //Um diese Pr^^?ufung zu realisieren musste das Objekt Array auf eine Object ArrayList ge^^?andert werden, in dem die Figuren[] 
+[2.2 <e:/GitHub/Uni/Universität/inf031/Übung2/Objektdiagramm A_2.jpg>] [3.3]
+Overfull \hbox (308.03401pt too wide) in paragraph at lines 267--267
+[]\OT1/cmtt/m/n/12 //Um diese Pr^^?ufung zu realisieren musste das Objekt Array auf eine Object ArrayList ge^^?andert werden, in dem die Figuren[] 
  []
 
-[6.6] [7.7] [8.8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 312.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 312.
+
+Overfull \hbox (308.03401pt too wide) in paragraph at lines 267--267
+[]\OT1/cmtt/m/n/12 //Um diese Pr^^?ufung zu realisieren musste das Objekt Array auf eine Object ArrayList ge^^?andert werden, in dem die Figuren[] 
+ []
+
+[4.4] [5.5] [6.6]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 304.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 304.
  (e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 312.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 312.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 304.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 304.
 Package rerunfilecheck Info: File `Abgabe.out' has not changed.
-(rerunfilecheck)             Checksum: BB51BBC0B0B92075409AF620CB628979;612.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 312.
+(rerunfilecheck)             Checksum: BF03A947A77CF78075FF733C3EA6AF91;482.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 304.
  ) 
 Here is how much of TeX's memory you used:
- 22936 strings out of 480607
- 443055 string characters out of 5907502
- 716006 words of memory out of 5000000
- 38350 multiletter control sequences out of 15000+600000
+ 35017 strings out of 480607
+ 809071 string characters out of 5907502
+ 1227356 words of memory out of 5000000
+ 50355 multiletter control sequences out of 15000+600000
  541333 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,18n,67p,485b,475s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,18n,71p,485b,474s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.pdf (8 pages, 185139 bytes).
+Output written on e:/GitHub/Uni/Universität/inf031/Übung2/Abgabe.pdf (6 pages, 183685 bytes).
 PDF statistics:
- 132 PDF objects out of 1000 (max. 8388607)
- 109 compressed objects within 2 object streams
- 20 named destinations out of 1000 (max. 500000)
- 126 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 116 PDF objects out of 1000 (max. 8388607)
+ 96 compressed objects within 1 object stream
+ 21 named destinations out of 1000 (max. 500000)
+ 110 words of extra memory for PDF output out of 10000 (max. 10000000)
 
