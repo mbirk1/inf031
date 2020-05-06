@@ -43,6 +43,20 @@ public class LinkedStringList {
 		}
 	}
 
+	public void add(int value) {
+		LinkedStringListElement elem = new LinkedStringListElement();
+		elem.setValue(Integer.toString(value));
+		if (start == null) { // list is empty
+			start = elem;
+		} else {
+			LinkedStringListElement tmp = start;
+			while (tmp.getNext() != null) { // find last element
+				tmp = tmp.getNext();
+			}
+			tmp.setNext(elem);
+		}
+	}
+
 	public String remove(int index) {
 		if (start == null) { // list is empty
 			return null;

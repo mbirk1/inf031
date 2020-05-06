@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text/>
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>200</y>
+      <w>150</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Bank
+--
+name: String
+accounts: Accounts[]
+--
+Bank(String name): </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>430</y>
+      <w>160</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Account
+--
+holders: Customers[]
+balance: long
+iban: String
+Account(String iban)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>430</y>
+      <w>170</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Customer
+--
+name: String
+accounts: Account[]
+homeAddress: Address
+workAddress: Address</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>660</y>
+      <w>230</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Address
+--
+street: String
+postCode: String
+city: String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>250</x>
+      <y>430</y>
+      <w>260</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+r1=0..*
+r2=0..*
+verwaltet</panel_attributes>
+    <additional_attributes>240.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>280</y>
+      <w>50</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+r1= 1..*
+r2=0..*
+hat</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>510</y>
+      <w>70</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+r1=0..*
+r2=0..2
+wohnt</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>150</x>
+      <y>220</y>
+      <w>360</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+r1=1
+r2=0..*
+führt</panel_attributes>
+    <additional_attributes>340.0;20.0;10.0;20.0;10.0;210.0</additional_attributes>
+  </element>
+</diagram>
