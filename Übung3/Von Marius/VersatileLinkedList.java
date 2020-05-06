@@ -1,4 +1,4 @@
-abstract class VersatileLinkedList extends LinkedStringList{
+class VersatileLinkedList extends LinkedStringList{
     private LinkedStringListElement start;
     private VersatileLinkedList list;
 
@@ -68,21 +68,17 @@ abstract class VersatileLinkedList extends LinkedStringList{
         return list;
     }
 
-    public boolean euqals(VersatileLinkedList value){
+    public boolean equals(VersatileLinkedList value){
         int count=0;
         if(this.size()!= value.size()){
             return false;
         }else{
             for(int i = 0; i<= value.size(); i++){
-                if(this.get(i)!= value.get(i)){
-                    return false;
-                }else{
-                    count++;
+                if(this.get(i).equals(value.get(i))){
+                    return true;
                 }
             }
         }
-        if(count == value.size()){
-            return true;
-        }
+        return false;
     }
 }
