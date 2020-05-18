@@ -1,0 +1,411 @@
+\documentclass[12pt,a4paper,oneside,ngerman]{article} 
+\usepackage[left=3cm,right=3cm,top=2.5cm]{geometry} % Groesse der Seitenraender definieren
+\usepackage[utf8]{inputenc} % utf8 encoding
+\usepackage{hyperref}
+\usepackage{ngerman}[babel]
+\usepackage{graphicx}
+\usepackage{tikz} % Automaten, Graphen, ... zeichnen
+\usepackage{tikz-qtree} % Paket fuer Tikz Graphen-Baeume
+\usetikzlibrary{arrows,shapes,automata} % Bestimmte tikz-Befehle benutzen
+\usepackage{amsmath,amssymb} % Mathe-Formeln und -Ausdruecke
+\usepackage{listings} % Code-Ausschnitte einbinden
+\usepackage{xcolor} % Eigene Farben definieren
+\usepackage{colortbl} % Farben verwenden in Tabellen
+\usepackage{wrapfig} % Bilder von Text umfliessen lassen
+\usepackage{multicol} % Mehrspaltigen Text schreiben
+\usepackage{stmaryrd} % Fuer Symbole wie zu Beispiel Widerspruchspfeil
+\usepackage{caption}
+\usepackage{totpages}
+
+\usepackage{circuitikz}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{float}
+
+\lstset{language=Java,
+basicstyle=\small \ttfamily,
+keywordstyle=\color{javapurple}\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+numbers=left,
+numberstyle=\tiny\color{black},
+stepnumber=1,
+numbersep=10pt,
+tabsize=1,
+showspaces=false,
+showstringspaces=false,
+breaklines=true}
+\lstset{literate=%
+  {Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}1
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+}
+
+% Beliebige RGB Farben definieren:
+\definecolor{gold}{rgb}{0.83, 0.69, 0.15}
+\definecolor{magenta}{rgb}{0.79, 0.08, 0.48}
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+% Beliebige RGB Farben definieren:
+\definecolor{gold}{rgb}{0.83, 0.69, 0.15}
+\definecolor{magenta}{rgb}{0.79, 0.08, 0.48}
+
+% Titel in Kopfzeilen
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{20pt}
+
+% Seitenumbrueche werden nicht mehr eingerueckt
+\setlength{\parindent}{0em}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+%Variablen
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\newcommand{\fach}{Objektorientierte Modellierung und Programmierung}
+\newcommand{\dokumentenTitel}{Abgabe Uebungsblatt Nr.04}
+\newcommand{\Abgabe}{19.05.2020, 12:00 Uhr}
+\newcommand{\memberOne}{Marius Birk}
+\newcommand{\memberTwo}{Pieter Vogt}
+
+
+\newcommand{\tutor}{ Florian Brandt }
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+% Kopfzeile auf jeder Seite:
+\fancyhead[R]{\dokumentenTitel} % Dokument-Titel
+\fancyhead[C]{}
+\fancyhead[L]{\memberOne, \memberTwo} % Autorennamen
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+
+% Fußzeile auf jeder Seite:
+\fancyfoot[C]{Seite \thepage \ von \ref{TotPages}} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+% Nun beginnt das eigentliche Dokument
+\begin{document}
+	\thispagestyle{plain} % Keine Kopfzeile auf erster Seite, aber Seitenzahl wird angezeigt
+	
+	\begin{multicols}{2} % Beginnt zweispaltigen Text fuer Header auf erster Seite
+		\hspace{-1cm} % Linken Header-Teil 1cm nach links schieben.
+		% Tabelle fuer linke Seite vom Header der ersten Seite
+		\begin{tabular}{ll} % Mit l werden die Eintraege linksbuendig
+			Autoren: & \memberOne \\ % Zwischen jeder Spalte ein & einfuegen
+			& \memberTwo \\
+% beendet eine Tabellenzeile 
+			Tutor: & \tutor \\  
+		\end{tabular}
+		
+		\columnbreak % Nun beginnt die rechte Seite des Headers
+		\hspace{-1cm} % Rechten Header-Teil 1cm nach links schieben.
+		% Tabelle fuer rechte Seite vom Header der ersten Seite
+		\begin{tabular}{ll} % p{1cm} bewirkt, dass die rechte Spalte 6cm breit ist.
+			Abgabe: & \Abgabe \\ % Zwischen jeder Spalte ein & einfuege
+			Smileys: &  
+			%Mit diesem Befehl wird die Zeilenhoehe der folgenden Tabelle um 20% erhoeht.   
+			\renewcommand{\arraystretch}{1.2} 
+			% Nun kommt eine innere Tabelle in der aeusseren Tabelle, mit der eine Punktetabelle fuer den Tutor erstellt wird:  
+			\begin{tabular}{|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|}
+				\hline A1 & A2 & A3 & A4 &$\sum\limits^{ }$ \\ \hline
+				& & & & \\ \hline    
+			\end{tabular} \\
+		\end{tabular}
+		
+	\end{multicols} % Beendet zweispaltigen Text
+	
+	\begin{center}
+		\Large{\fach} \\
+		\LARGE{\dokumentenTitel} \\
+		\small
+		$($Alle allgemeinen Definitionen aus der Vorlesung haben in diesem Dokument bestand, es sei den sie erhalten eine explizit andere Definition.$)$
+	\end{center}
+\section*{Aufgabe 1}
+   \begin{lstlisting}
+      import java.lang.Math;
+//Dieser Code läuft für das explizite Beispiel aus der Aufgabe.
+public class Functions {
+    public static void main(String[]  args){
+        double i = 2;
+        Function chain = new SineFunction(new SquareFunction());
+        chain.calculate(i);
+    }
+
+}
+interface Function{
+    void calculate(double i);
+    double  result=0;
+}
+class SineFunction implements Function{
+    private String function =" ";
+    public SineFunction(SquareFunction squareFunction) {
+        if(squareFunction.getClass()== SquareFunction.class){
+            function="square";
+        }
+        else{
+            function="sine";
+        }
+        //Diese If Abfragen können bei beliebiger Reihenfolge der Funktionen entsprechend erweitert werden.
+        //Weitere Anpassungen am Code sind dann aber noch nötig.
+    }
+    @Override public void calculate(double i ){
+        if(function.equals("sqaure")){
+            i=i*i;
+        }
+        i=Math.sin(i);
+        System.out.println(i);
+    }
+}
+class SquareFunction implements Function{
+    @Override
+    public void calculate(double i) {
+
+    }
+}
+\end{lstlisting}
+\section{Aufgabe 2}
+   \subsection*{Teilaufgabe a}
+      \begin{lstlisting}
+   interface Sequence{
+      public int current=0;
+  }  
+      \end{lstlisting}
+   \subsection*{Teilaufgabe b}
+      \begin{lstlisting}
+         public class Naturals implements Sequence {
+            int current = 0;
+         
+            @Override
+            public int getNext() {
+               current++;
+               return current;
+            }
+         }
+      \end{lstlisting}
+   \subsection*{Teilaufgabe c}
+      \begin{lstlisting}
+         abstract class Filter implements Sequence1{
+            public Filter(Sequence1 sequence) {
+                Object s = sequence;
+            }
+        }        
+      \end{lstlisting}
+   \subsection*{Teilaufgabe d}
+      \begin{lstlisting}
+         class ZapMultiples extends Filter{
+            private int cur=0;
+            private int basic;
+            public ZapMultiples(int base$,$ Sequence1 sequence) {
+                super(sequence);
+                basic = base;
+            }
+        
+            @Override public int current(){
+                return cur;
+            }
+            @Override public int getNext(){
+                cur++;
+                if(cur%basic ==0){
+                    cur=cur+1;
+                    return cur;
+                }else{
+                    return cur;
+                }
+            }
+        }     
+      \end{lstlisting}
+   \subsection*{Teilaufgabe e}
+      \begin{lstlisting}
+         import java.util.ArrayList;
+
+public class Primes implements Sequence {
+
+   Sequence sequence = new Naturals();
+   int next = 1;
+   ArrayList<Integer> primes = new ArrayList<>();
+
+   private void incNext() {
+      next++;
+   }
+
+   @Override
+   public int getNext() {
+      if (checkIfPrime()) {
+         primes.add(next);
+         incNext();
+         return sequence.getNext();
+      } else {
+         incNext();
+         sequence.getNext();
+         return getNext();
+      }
+      /*if (checkIfPrime(next) && next != 1) {
+         incNext();
+         return sequence.getNext();
+      } else {
+         incNext();
+         sequence.getNext();
+         return getNext();
+      }*/
+   }
+
+   private boolean checkIfPrime() {
+      if (next == 1) {
+         return false;
+      }
+      if (isDividableByPrim(next)) {
+         return false;
+      } else return true;
+      /*
+      for (int i = 2; i < number; i++) {
+         if (next % i == 0) {
+            return false;
+         }
+      }
+      return true;
+      */
+   }
+
+   private boolean isDividableByPrim(int next) {
+      for (Integer i : primes) {
+         if (next % i == 0) {
+            return true;
+         }
+      }
+      return false;
+   }
+
+   public Primes() {
+   }
+}
+\end{lstlisting}
+\section{Aufgabe 3}
+\begin {lstlisting}
+import jdk.jshell.execution.Util;
+
+import javax.print.DocFlavor;
+
+public class Compare {
+    public static void main(String[] args){
+        Object[] objects = new Object[3];
+        Comparable one = new ComparableInteger(1);
+        Comparable four = new ComparableInteger(4);
+        Comparable seven = new ComparableInteger(7);
+
+        objects[0] = one;
+        objects[1] = four;
+        objects[2] = seven;
+
+        Utils util = new Utils();
+        Comparable getMinimum;
+    }
+}
+interface Comparable{
+    public int compareTo(Comparable obj);
+    public int getValue();
+    public void setValue(int i);
+}
+
+class Utils{
+    public static Comparable getMinimum(Comparable[] elements){
+        ComparableInteger min= new ComparableInteger(0);
+        for(int i =0; i<elements.length;i++){
+
+            if (min.getValue() > elements[i].getValue()) {
+                min.setValue(i);
+            }
+        }
+        return elements[min.getValue()];
+    }
+
+}
+class Integer{
+    protected int value;
+    public Integer(int value){
+        this.value=value;
+    }
+    public int getValue(){
+        return value;
+    }
+}
+class ComparableInteger implements Comparable{
+    protected int value;
+    public ComparableInteger(int value){
+        this.value=value;
+    }
+    public int getValue(){
+        return value;
+    }
+
+    @Override public void setValue(int value) {
+        this.value = value;
+    }
+
+    @Override
+    public int compareTo(Comparable obj) {
+        return 0;
+    }
+}
+\end{lstlisting}
+
+\section{Aufgabe 4}
+\begin{lstlisting}
+   import java.util.ArrayList;
+
+public class Rooms {
+    public static void main(String[] args){
+        Furniture chair = new Chair();
+        Desk desk = new Desk();
+        Chair chair1 = new Chair();
+
+        Office office = new Office(desk, chair1, chair);
+    }
+}
+interface Furniture{
+
+}
+class Table implements Furniture{
+    private static int legs = 4;
+    public int getLegs(){
+        return legs;
+    }
+}
+class Desk extends Table{
+
+}
+class Chair implements Furniture{
+    private static int legs = 4;
+    public int getLegs(){
+        return legs;
+    }
+}
+class Office{
+    private int i=0;
+    ArrayList<Chair> chairs = new ArrayList<Chair>();
+    ArrayList<Desk> desks = new ArrayList<Desk>();
+    ArrayList<Furniture> furniture = new ArrayList<Furniture>();
+
+    public Office( Desk desk, Chair chair, Furniture fur) {
+        desks.add(desk);
+        chairs.add(chair);
+        furniture.add(fur);
+    }
+}
+
+class Room extends Office{
+    public Room(Desk desk, Chair chair, Furniture fur) {
+        super(desk, chair, fur);
+    }
+}
+\end{lstlisting}
+\end{document}
