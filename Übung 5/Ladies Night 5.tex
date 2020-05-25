@@ -1,0 +1,326 @@
+\documentclass[12pt,a4paper,oneside,ngerman]{article} 
+\usepackage[left=3cm,right=3cm,top=2.5cm]{geometry} % Groesse der Seitenraender definieren
+\usepackage[utf8]{inputenc} % utf8 encoding
+\usepackage{hyperref}
+\usepackage{ngerman}[babel]
+\usepackage{graphicx}
+\usepackage{tikz} % Automaten, Graphen, ... zeichnen
+\usepackage{tikz-qtree} % Paket fuer Tikz Graphen-Baeume
+\usetikzlibrary{arrows,shapes,automata} % Bestimmte tikz-Befehle benutzen
+\usepackage{amsmath,amssymb} % Mathe-Formeln und -Ausdruecke
+\usepackage{listings} % Code-Ausschnitte einbinden
+\usepackage{xcolor} % Eigene Farben definieren
+\usepackage{colortbl} % Farben verwenden in Tabellen
+\usepackage{wrapfig} % Bilder von Text umfliessen lassen
+\usepackage{multicol} % Mehrspaltigen Text schreiben
+\usepackage{stmaryrd} % Fuer Symbole wie zu Beispiel Widerspruchspfeil
+\usepackage{caption}
+\usepackage{totpages}
+
+\usepackage{circuitikz}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{float}
+
+\lstset{language=Java,
+basicstyle=\small \ttfamily,
+keywordstyle=\color{javapurple}\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+numbers=left,
+numberstyle=\tiny\color{black},
+stepnumber=1,
+numbersep=10pt,
+tabsize=1,
+showspaces=false,
+showstringspaces=false,
+breaklines=true}
+\lstset{literate=%
+  {Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}1
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+}
+
+% Beliebige RGB Farben definieren:
+\definecolor{gold}{rgb}{0.83, 0.69, 0.15}
+\definecolor{magenta}{rgb}{0.79, 0.08, 0.48}
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+% Beliebige RGB Farben definieren:
+\definecolor{gold}{rgb}{0.83, 0.69, 0.15}
+\definecolor{magenta}{rgb}{0.79, 0.08, 0.48}
+
+% Titel in Kopfzeilen
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{20pt}
+
+% Seitenumbrueche werden nicht mehr eingerueckt
+\setlength{\parindent}{0em}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+%Variablen
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\newcommand{\fach}{Objektorientierte Modellierung und Programmierung}
+\newcommand{\dokumentenTitel}{Abgabe Uebungsblatt Nr.05}
+\newcommand{\Abgabe}{26.05.2020, 12:00 Uhr}
+\newcommand{\memberOne}{Marius Birk}
+\newcommand{\memberTwo}{Pieter Vogt}
+
+
+\newcommand{\tutor}{ Florian Brandt }
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+% Kopfzeile auf jeder Seite:
+\fancyhead[R]{\dokumentenTitel} % Dokument-Titel
+\fancyhead[C]{}
+\fancyhead[L]{\memberOne, \memberTwo} % Autorennamen
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+
+% Fußzeile auf jeder Seite:
+\fancyfoot[C]{Seite \thepage \ von \ref{TotPages}} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+% Nun beginnt das eigentliche Dokument
+\begin{document}
+	\thispagestyle{plain} % Keine Kopfzeile auf erster Seite, aber Seitenzahl wird angezeigt
+	
+	\begin{multicols}{2} % Beginnt zweispaltigen Text fuer Header auf erster Seite
+		\hspace{-1cm} % Linken Header-Teil 1cm nach links schieben.
+		% Tabelle fuer linke Seite vom Header der ersten Seite
+		\begin{tabular}{ll} % Mit l werden die Eintraege linksbuendig
+			Autoren: & \memberOne \\ % Zwischen jeder Spalte ein & einfuegen
+			& \memberTwo \\
+% beendet eine Tabellenzeile 
+			Tutor: & \tutor \\  
+		\end{tabular}
+		
+		\columnbreak % Nun beginnt die rechte Seite des Headers
+		\hspace{-1cm} % Rechten Header-Teil 1cm nach links schieben.
+		% Tabelle fuer rechte Seite vom Header der ersten Seite
+		\begin{tabular}{ll} % p{1cm} bewirkt, dass die rechte Spalte 6cm breit ist.
+			Abgabe: & \Abgabe \\ % Zwischen jeder Spalte ein & einfuege
+			Smileys: &  
+			%Mit diesem Befehl wird die Zeilenhoehe der folgenden Tabelle um 20% erhoeht.   
+			\renewcommand{\arraystretch}{1.2} 
+			% Nun kommt eine innere Tabelle in der aeusseren Tabelle, mit der eine Punktetabelle fuer den Tutor erstellt wird:  
+			\begin{tabular}{|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|}
+				\hline A1 & A2 & A3 &$\sum\limits^{ }$ \\ \hline
+				& & & \\ \hline    
+			\end{tabular} \\
+		\end{tabular}
+		
+	\end{multicols} % Beendet zweispaltigen Text
+	
+	\begin{center}
+		\Large{\fach} \\
+		\LARGE{\dokumentenTitel} \\
+		\small
+		$($Alle allgemeinen Definitionen aus der Vorlesung haben in diesem Dokument bestand, es sei den sie erhalten eine explizit andere Definition.$)$
+	\end{center}
+
+
+%~~~~~DOKUMENT ANFANG~~~~~%
+
+%~~~~~Aufgabe 1
+\section*{Aufgabe 1}
+\begin{lstlisting}
+%%hier dein code
+\end{lstlisting}
+
+%~~~~~Aufgabe 2
+\section*{Aufgabe 2}
+\subsection*{Bill.java}
+\begin{lstlisting}
+import java.util.ArrayList;
+
+public class Bill {
+
+   //fields
+
+   String name;
+   double billPrice = 0;
+   ArrayList<BillItem> items = new ArrayList<>();
+
+   //methods
+
+   public void add(CarPart part) {
+      items.add(new BillItem(part));
+   }
+
+   //getter - setter
+
+   public double getTotalPrice() {
+      return billPrice;
+   }
+
+   public String toString() {
+      StringBuffer tempString = new StringBuffer("Receipt for Bill: ");
+      double receipTotal = 0;
+      tempString.append(this.name);
+      tempString.append("\n");
+      for (int i = 0; i < items.size(); i++) {
+         tempString.append(items.get(i).item.getName());//add ItemName
+         tempString.append("\t");
+         tempString.append(items.get(i).item.getPrice());//add ItemPrice
+         tempString.append("\n");
+         receipTotal = receipTotal + items.get(i).item.getPrice();
+      }
+      tempString.append("\n");
+      Math.nextUp(receipTotal);//doesn't work for some reason.
+      tempString.append("In Total this receipt is: " + receipTotal);
+      String output = tempString.toString();
+      return output;
+   }
+
+   //constructors
+
+   public Bill(String name) {
+      this.name = name;
+   }
+
+   //nested classes
+
+   private class BillItem {
+
+      //fields
+
+      CarPart item;
+
+      //methods
+
+      //getter - setter
+
+      public CarPart getItem() {
+         return item;
+      }
+
+      public void setItem(CarPart item) {
+         this.item = item;
+      }
+
+      public BillItem(CarPart item) {
+         this.item = item;
+      }
+   }
+
+}
+
+\end{lstlisting}
+
+\subsection*{Car.java}
+\begin{lstlisting}
+import java.util.ArrayList;
+
+public class Car {
+   ArrayList<CarPart> parts = new ArrayList<>();
+}
+
+\end{lstlisting}
+
+\subsection*{CarComponent.java}
+\begin{lstlisting}
+public interface CarComponent {
+   public String getName();
+}
+
+\end{lstlisting}
+
+\subsection*{CarPart.java}
+\begin{lstlisting}
+public class CarPart implements CarComponent {
+   String name;
+   double price;
+
+   @Override
+   public String getName() {
+      return null;
+   }
+
+   public double getPrice() {
+      return price;
+   }
+
+   public static class Seat extends CarPart {
+      String name = new String("Seat");
+      double price = 2000.0;
+
+      @Override
+      public String getName() {
+         return name;
+      }
+
+      public double getPrice() {
+         return price;
+      }
+   }
+
+   public static class Wheel extends CarPart {
+      String name = new String("Wheel");
+
+      double price = 1000.0;
+
+      @Override
+      public String getName() {
+         return name;
+      }
+
+      public double getPrice() {
+         return price;
+      }
+   }
+
+   public static class Motor extends CarPart {
+      String name = new String("Motor");
+
+      double price = 100000;
+
+      @Override
+      public String getName() {
+         return name;
+      }
+
+      public double getPrice() {
+         return price;
+      }
+   }
+}
+
+\end{lstlisting}
+
+\subsection*{Main.java}
+\begin{lstlisting}
+public class Main {
+   public static void main(String[] args) {
+      Bill bill = new Bill("Rolls Royce");
+      bill.add(new CarPart.Motor());
+      bill.add(new CarPart.Seat());
+      bill.add(new CarPart.Wheel());
+      bill.add(new CarPart.Wheel());
+      bill.add(new CarPart.Wheel());
+      bill.add(new CarPart.Wheel());
+      System.out.println(bill.toString());
+   }
+}
+\end{lstlisting}
+
+%~~~~~Aufgabe 3
+\section*{Aufgabe 3}
+\begin{lstlisting}
+%%hier dein code
+\end{lstlisting}
+
+
+\end{document}
