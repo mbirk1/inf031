@@ -206,9 +206,10 @@ interface MultiSet<T, I extends Number> extends Iterable {
 \section*{Aufgabe 2}
 \subsection*{Beispiel1}
 Aufgrund der Typeerasure ist es nicht möglich eine generische Exception zu werfen. Angenommen es \underline{würde}  durch einen Fehler im Compiler tatsächlich kompiliert, was würde passieren? Sobald eine Exception geworfen werden müsste, müsste sich die JRE für eine Exception entscheiden. Zum Zeitpunkt der Implementierung waren noch alle Exceptions voneinander unterscheidbar. Nun ist durch die Typeerasure des Compilers alles innerhalb der <> entfernt und durch Number ersetzt da beide klassen Number subclassen. Die JRE weiss nicht welche Exception geworfen werden muss und es kommt zum Laufzeitfehler.
-
+\newpage
 \subsection*{Beispiel2}
-
+In diesem Beispiel verhält es sich ähnlich wie im ersten Beispiel. Außer, dass in den Generics Datentypen verwendet wurden, die voneinander erben. Wenn versucht wird eine Exception mit dem Generic "Number" zu werfen und dies fehl schlägt, sodass der catch-Bereich in Kraft treten soll. Kann dies auch nicht geschehen, denn der Generic Integer erbt von Number. Der gesamte Block kann daher nicht funktionieren.\\
+Zur Laufzeit hin, verhält es sich genau wie in Beispiel eins. Grund ist wieder Typeerasure. Zur Laufzeit würde versucht werden eine GenericException zu werfen und im catch-Block zu greifen. Daher hätte der try-catch-Block keinen Effekt.
 
 %~~~~~Aufgabe 3
 \section*{Aufgabe 3}
