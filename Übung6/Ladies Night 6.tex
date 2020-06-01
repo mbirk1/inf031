@@ -1,0 +1,355 @@
+\documentclass[12pt,a4paper,oneside,ngerman]{article} 
+\usepackage[left=3cm,right=3cm,top=2.5cm]{geometry} % Groesse der Seitenraender definieren
+\usepackage[utf8]{inputenc} % utf8 encoding
+\usepackage{hyperref}
+\usepackage{ngerman}[babel]
+\usepackage{graphicx}
+\usepackage{tikz} % Automaten, Graphen, ... zeichnen
+\usepackage{tikz-qtree} % Paket fuer Tikz Graphen-Baeume
+\usetikzlibrary{arrows,shapes,automata} % Bestimmte tikz-Befehle benutzen
+\usepackage{amsmath,amssymb} % Mathe-Formeln und -Ausdruecke
+\usepackage{listings} % Code-Ausschnitte einbinden
+\usepackage{xcolor} % Eigene Farben definieren
+\usepackage{colortbl} % Farben verwenden in Tabellen
+\usepackage{wrapfig} % Bilder von Text umfliessen lassen
+\usepackage{multicol} % Mehrspaltigen Text schreiben
+\usepackage{stmaryrd} % Fuer Symbole wie zu Beispiel Widerspruchspfeil
+\usepackage{caption}
+\usepackage{totpages}
+
+\usepackage{circuitikz}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{float}
+
+\lstset{language=Java,
+basicstyle=\small \ttfamily,
+keywordstyle=\color{javapurple}\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+numbers=left,
+numberstyle=\tiny\color{black},
+stepnumber=1,
+numbersep=10pt,
+tabsize=1,
+showspaces=false,
+showstringspaces=false,
+breaklines=true}
+\lstset{literate=%
+  {Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}1
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+}
+
+% Beliebige RGB Farben definieren:
+\definecolor{gold}{rgb}{0.83, 0.69, 0.15}
+\definecolor{magenta}{rgb}{0.79, 0.08, 0.48}
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+% Beliebige RGB Farben definieren:
+\definecolor{gold}{rgb}{0.83, 0.69, 0.15}
+\definecolor{magenta}{rgb}{0.79, 0.08, 0.48}
+
+% Titel in Kopfzeilen
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{20pt}
+
+% Seitenumbrueche werden nicht mehr eingerueckt
+\setlength{\parindent}{0em}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+%Variablen
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\newcommand{\fach}{Objektorientierte Modellierung und Programmierung}
+\newcommand{\dokumentenTitel}{Abgabe Uebungsblatt Nr.06}
+\newcommand{\Abgabe}{01.06.2020, 12:00 Uhr}
+\newcommand{\memberOne}{Marius Birk}
+\newcommand{\memberTwo}{Pieter Vogt}
+
+
+\newcommand{\tutor}{ Florian Brandt }
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+% Kopfzeile auf jeder Seite:
+\fancyhead[R]{\dokumentenTitel} % Dokument-Titel
+\fancyhead[C]{}
+\fancyhead[L]{\memberOne, \memberTwo} % Autorennamen
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+
+% Fußzeile auf jeder Seite:
+\fancyfoot[C]{Seite \thepage \ von \ref{TotPages}} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+% Nun beginnt das eigentliche Dokument
+\begin{document}
+	\thispagestyle{plain} % Keine Kopfzeile auf erster Seite, aber Seitenzahl wird angezeigt
+	
+	\begin{multicols}{2} % Beginnt zweispaltigen Text fuer Header auf erster Seite
+		\hspace{-1cm} % Linken Header-Teil 1cm nach links schieben.
+		% Tabelle fuer linke Seite vom Header der ersten Seite
+		\begin{tabular}{ll} % Mit l werden die Eintraege linksbuendig
+			Autoren: & \memberOne \\ % Zwischen jeder Spalte ein & einfuegen
+			& \memberTwo \\
+% beendet eine Tabellenzeile 
+			Tutor: & \tutor \\  
+		\end{tabular}
+		
+		\columnbreak % Nun beginnt die rechte Seite des Headers
+		\hspace{-1cm} % Rechten Header-Teil 1cm nach links schieben.
+		% Tabelle fuer rechte Seite vom Header der ersten Seite
+		\begin{tabular}{ll} % p{1cm} bewirkt, dass die rechte Spalte 6cm breit ist.
+			Abgabe: & \Abgabe \\ % Zwischen jeder Spalte ein & einfuege
+			Smileys: &  
+			%Mit diesem Befehl wird die Zeilenhoehe der folgenden Tabelle um 20% erhoeht.   
+			\renewcommand{\arraystretch}{1.2} 
+			% Nun kommt eine innere Tabelle in der aeusseren Tabelle, mit der eine Punktetabelle fuer den Tutor erstellt wird:  
+			\begin{tabular}{|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|}
+				\hline A1 & A2 & A3 &$\sum\limits^{ }$ \\ \hline
+				& & & \\ \hline    
+			\end{tabular} \\
+		\end{tabular}
+		
+	\end{multicols} % Beendet zweispaltigen Text
+	
+	\begin{center}
+		\Large{\fach} \\
+		\LARGE{\dokumentenTitel} \\
+		\small
+		$($Alle allgemeinen Definitionen aus der Vorlesung haben in diesem Dokument bestand, es sei den sie erhalten eine explizit andere Definition.$)$
+	\end{center}
+
+
+%~~~~~DOKUMENT ANFANG~~~~~%
+
+%~~~~~Aufgabe 1
+\section*{Aufgabe 1}
+\begin{lstlisting}
+import java.util.*;
+import java.util.function.Consumer;
+
+public class HashMapMultiSet implements MultiSet{
+    public static void main(String[] args){
+        MultiSet<String, Integer> Test = (MultiSet<String, Integer>) new HashMap<String, Integer>();
+    }
+
+    @Override
+    public Iterator iterator() {
+        return null;
+    }
+
+    @Override
+    public void forEach(Consumer action) {
+        List<Object> all = new ArrayList<>();
+
+        for (int i = 0; i < values.size(); i++)
+        for (int j = 0; j < frequency.get(i); j++)
+        all.add(values.get(i));
+
+        all.forEach(action);
+    }
+
+    @Override
+    public Spliterator spliterator() {
+        return null;
+    }
+
+    @Override
+    public void add(Object element) {
+        int index= values.indexOf(element);
+        int count = frequency.get(index);
+
+        int prevCount = 0;
+        if (index != -1) {
+            prevCount = frequency.get(index);
+            frequency.set(index, prevCount + count);
+        }
+        else if (count != 0) {
+            values.add(element);
+            frequency.add(count);
+        }
+
+    }
+
+    @Override
+    public int count(Object element) {
+        int index = values.indexOf(element);
+        int number = frequency.get(index);
+        return number;
+    }
+}
+interface MultiSet<T, I extends Number> extends Iterable {
+    public void add(T element);
+    public default int count(T element){
+        return 0;
+    }
+    public List<Object> values = null;
+    public List<Integer> frequency = null;
+
+}
+
+\end{lstlisting}
+
+%~~~~~Aufgabe 2
+\section*{Aufgabe 2}
+\subsection*{Beispiel1}
+Aufgrund der Typeerasure ist es nicht möglich eine generische Exception zu werfen. Angenommen es \underline{würde}  durch einen Fehler im Compiler tatsächlich kompiliert, was würde passieren? Sobald eine Exception geworfen werden müsste, müsste sich die JRE für eine Exception entscheiden. Zum Zeitpunkt der Implementierung waren noch alle Exceptions voneinander unterscheidbar. Nun ist durch die Typeerasure des Compilers alles innerhalb der <> entfernt und durch Number ersetzt da beide klassen Number subclassen. Die JRE weiss nicht welche Exception geworfen werden muss und es kommt zum Laufzeitfehler.
+
+\subsection*{Beispiel2}
+
+
+%~~~~~Aufgabe 3
+\section*{Aufgabe 3}
+\begin{lstlisting}
+import java.util.*;
+
+public class StarkEnterprises implements Company{
+    private HashMap<Integer, String> employee = new HashMap<>();
+    private HashMap<Integer, String> project = new HashMap<>();
+    private HashMap<Integer, Integer> relation = new HashMap<>();
+    public StarkEnterprises(){
+    }
+    @Override
+    public void addEmployee(int id, String name) throws DuplicateIdException {
+        if(employee.containsKey(id)) {
+            throw new DuplicateIdException();
+        } else {
+            if (employee.containsValue(name)) {
+                throw new DuplicateIdException();
+            }
+        }else{
+            employee.put(id, name);
+        }
+    }
+
+    @Override
+    public String getEmployeeName(int id) {
+        return employee.get(id);
+    }
+
+    @Override
+    public void addProject(int id, String name) throws DuplicateIdException {
+        if(project.containsKey(id)){
+            throw new DuplicateIdException();
+        }else{
+            if(project.containsValue(name)){
+                throw new DuplicateIdException();
+            }
+        }else{
+            project.put(id, name);
+        }
+    }
+
+    @Override
+    public String getProjectName(int id) {
+        return project.get(id);
+    }
+
+    @Override
+    public void assignEmployeeToProject(int employeeId, int projectId) throws UnknownIdException {
+        try{
+            relation.put(employeeId, projectId);
+        }catch(Exception e){
+            throw new UnknownIdException();
+        }
+    }
+
+    @Override
+    public void removeEmployeeFromProject(int employeeId, int projectId) throws UnknownIdException {
+        try{
+            relation.remove(employeeId, projectId);
+        }catch(Exception e){
+            throw new UnknownIdException();
+        }
+    }
+
+    @Override
+    public Collection<Integer> getEmployees() {
+        List<String> employeeByValue = new ArrayList(employee.values());
+        Collections.sort(employeeByValue);
+        List<String> employeeName = new ArrayList<>(employee.values());
+        List<Integer> employeeId = new ArrayList(employee.keySet());
+        List<Integer> sorted = new ArrayList<>();
+        for(int i = 0; i<employeeByValue.size();i++){
+            for(int j =0; j<employeeName;j++){
+                if(employeeByValue.get(i).equals(employeeName.get(j))){
+                    employeeId.add(j);
+                }
+            }
+        }
+        return employeeId;
+    }
+
+    @Override
+    public Collection<Integer> getProjectsForEmployee(int employeeId) throws UnknownIdException {
+        List<Integer> ID= new ArrayList<>();
+        List<Integer> project = new ArrayList(relation.values());
+        for(int i =0; i<relation.size();i++){
+            if(employeeId==relation.get(i)){
+                ID.add(project.get(i));
+            }
+        }
+        List<String> name = new ArrayList<>();
+        for(int i = 0; i<ID.size();i++){
+            for(int j = 0; j<project.size();j++){
+                if(ID.get(i) == project.get(j)){
+                    name.add(this.getProjectName(j));
+                }
+            }
+        }
+        return ID;
+    }
+}
+class DuplicateIdException extends Throwable {
+
+}
+
+class UnknownIdException extends Throwable {
+
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+public class StarkTest {
+
+	public static void main(String[] args) {
+		Company stark = new StarkEnterprises();
+		try {
+			stark.addEmployee(0, "Tony");
+			stark.addEmployee(1, "Pepper");
+			stark.addEmployee(2, "Jarvis");
+			stark.addProject(0, "Suit");
+			stark.addProject(1, "Jarvis");
+			stark.addProject(2, "Jarvis");
+			stark.addProject(3, "Finances");
+			stark.assignEmployeeToProject(0, 0);
+			stark.assignEmployeeToProject(0, 1);
+			stark.assignEmployeeToProject(1, 3);
+			stark.assignEmployeeToProject(2, 0);
+			stark.assignEmployeeToProject(2, 2);
+			System.out.println(stark);
+		} catch (InvalidIdException e) {
+			System.out.println("Invalid ID: " + e.getId());
+		}
+	}
+
+}
+
+\end{lstlisting}
+
+\begin{lstlisting}
+\end{lstlisting}
+
+\end{document}
