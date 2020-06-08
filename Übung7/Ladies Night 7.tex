@@ -1,0 +1,358 @@
+\documentclass[12pt,a4paper,oneside,ngerman]{article} 
+\usepackage[left=3cm,right=3cm,top=2.5cm]{geometry} % Groesse der Seitenraender definieren
+\usepackage[utf8]{inputenc} % utf8 encoding
+\usepackage{hyperref}
+\usepackage{ngerman}[babel]
+\usepackage{graphicx}
+\usepackage{tikz} % Automaten, Graphen, ... zeichnen
+\usepackage{tikz-qtree} % Paket fuer Tikz Graphen-Baeume
+\usetikzlibrary{arrows,shapes,automata} % Bestimmte tikz-Befehle benutzen
+\usepackage{amsmath,amssymb} % Mathe-Formeln und -Ausdruecke
+\usepackage{listings} % Code-Ausschnitte einbinden
+\usepackage{xcolor} % Eigene Farben definieren
+\usepackage{colortbl} % Farben verwenden in Tabellen
+\usepackage{wrapfig} % Bilder von Text umfliessen lassen
+\usepackage{multicol} % Mehrspaltigen Text schreiben
+\usepackage{stmaryrd} % Fuer Symbole wie zu Beispiel Widerspruchspfeil
+\usepackage{caption}
+\usepackage{totpages}
+
+\usepackage{circuitikz}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{float}
+
+\lstset{language=Java,
+basicstyle=\small \ttfamily,
+keywordstyle=\color{javapurple}\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+numbers=left,
+numberstyle=\tiny\color{black},
+stepnumber=1,
+numbersep=10pt,
+tabsize=1,
+showspaces=false,
+showstringspaces=false,
+breaklines=true}
+\lstset{literate=%
+  {Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}1
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+}
+
+% Beliebige RGB Farben definieren:
+\definecolor{gold}{rgb}{0.83, 0.69, 0.15}
+\definecolor{magenta}{rgb}{0.79, 0.08, 0.48}
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+% Beliebige RGB Farben definieren:
+\definecolor{gold}{rgb}{0.83, 0.69, 0.15}
+\definecolor{magenta}{rgb}{0.79, 0.08, 0.48}
+
+% Titel in Kopfzeilen
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{20pt}
+
+% Seitenumbrueche werden nicht mehr eingerueckt
+\setlength{\parindent}{0em}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+%Variablen
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\newcommand{\fach}{Objektorientierte Modellierung und Programmierung}
+\newcommand{\dokumentenTitel}{Abgabe Uebungsblatt Nr.07}
+\newcommand{\Abgabe}{09.06.2020, 12:00 Uhr}
+\newcommand{\memberOne}{Marius Birk}
+\newcommand{\memberTwo}{Pieter Vogt}
+
+
+\newcommand{\tutor}{ Florian Brandt }
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+% Kopfzeile auf jeder Seite:
+\fancyhead[R]{\dokumentenTitel} % Dokument-Titel
+\fancyhead[C]{}
+\fancyhead[L]{\memberOne, \memberTwo} % Autorennamen
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+
+% Fußzeile auf jeder Seite:
+\fancyfoot[C]{Seite \thepage \ von \ref{TotPages}} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+% Nun beginnt das eigentliche Dokument
+\begin{document}
+	\thispagestyle{plain} % Keine Kopfzeile auf erster Seite, aber Seitenzahl wird angezeigt
+	
+	\begin{multicols}{2} % Beginnt zweispaltigen Text fuer Header auf erster Seite
+		\hspace{-1cm} % Linken Header-Teil 1cm nach links schieben.
+		% Tabelle fuer linke Seite vom Header der ersten Seite
+		\begin{tabular}{ll} % Mit l werden die Eintraege linksbuendig
+			Autoren: & \memberOne \\ % Zwischen jeder Spalte ein & einfuegen
+			& \memberTwo \\
+% beendet eine Tabellenzeile 
+			Tutor: & \tutor \\  
+		\end{tabular}
+		
+		\columnbreak % Nun beginnt die rechte Seite des Headers
+		\hspace{-1cm} % Rechten Header-Teil 1cm nach links schieben.
+		% Tabelle fuer rechte Seite vom Header der ersten Seite
+		\begin{tabular}{ll} % p{1cm} bewirkt, dass die rechte Spalte 6cm breit ist.
+			Abgabe: & \Abgabe \\ % Zwischen jeder Spalte ein & einfuege
+			Smileys: &  
+			%Mit diesem Befehl wird die Zeilenhoehe der folgenden Tabelle um 20% erhoeht.   
+			\renewcommand{\arraystretch}{1.2} 
+			% Nun kommt eine innere Tabelle in der aeusseren Tabelle, mit der eine Punktetabelle fuer den Tutor erstellt wird:  
+			\begin{tabular}{|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|}
+				\hline A1 & A2 & A3 &$\sum\limits^{ }$ \\ \hline
+				& & & \\ \hline    
+			\end{tabular} \\
+		\end{tabular}
+		
+	\end{multicols} % Beendet zweispaltigen Text
+	
+	\begin{center}
+		\Large{\fach} \\
+		\LARGE{\dokumentenTitel} \\
+		\small
+		$($Alle allgemeinen Definitionen aus der Vorlesung haben in diesem Dokument bestand, es sei den sie erhalten eine explizit andere Definition.$)$
+	\end{center}
+
+
+%~~~~~DOKUMENT ANFANG~~~~~%
+
+%~~~~~Aufgabe 1
+\section*{Aufgabe 1}
+\begin{lstlisting}
+   public class LambdaTest {
+
+   public static void main(String[] args) {
+      //@SuppressWarnings("unchecked")
+      //Function<Double, Double> chain = makeChain(new Function[]{inverse, id, timesTen, divideByPi});
+      //AUFGABE 1 B
+
+      // i) map x to itself
+      Function<Double> id = (x) -> x;
+      System.out.println(id.calculate(5.0));
+
+      //ii) map x to inverse self:
+      Function<Double> inverse = (x) -> x * -1;
+      System.out.println(inverse.calculate(5.0));
+
+      //iii) map x to x*10
+      Function<Double> timesTen = (x) -> x * 10;
+      System.out.println(timesTen.calculate(5.0));
+
+      //iv) map x to x/pi
+      Function<Double> divideByPi = (x) -> x / Math.PI;
+      System.out.println(divideByPi.calculate(5.0));
+
+
+      //AUFGABE 1 C
+      Function round = (x) -> Math.round(x.doubleValue());
+      System.out.println(round.calculate(5.5421235223));
+      System.out.println(round.calculate(5.5421235223).getClass().toString());
+
+      //AUFGABE 1 D
+      Function testChain = (x) -> x.doubleValue();
+      Number a = inverse.calculate(id.calculate(timesTen.calculate(divideByPi.calculate(5.0))));
+
+   }
+/*
+   public Function makeChain(final Function[] funs, Number n) {
+      Function c;
+      c =(x) -> funs[];
+
+      return c;
+   }
+ */
+}
+
+\end{lstlisting}
+\section*{Aufgabe 2}
+\begin{lstlisting}
+   import java.util.stream.Stream;
+public class StreamTest {
+    public static void main(final String[] args){
+        final Stream<Integer> naturals =  Stream.iterate(1, x->x+1);
+        final Stream<Integer> integers = Stream.iterate(0, (Integer x) ->{
+            if(x<=0){
+                x=x*-1;
+                x=x+1;
+            }else{
+                x=x*-1;
+            }
+            return x;
+        });
+        
+        System.out.println("Naturals:" + filterAndSum(naturals));
+        System.out.print("Integers:" + filterAndSum(integers));
+    }
+
+    public static int filterAndSum(Stream<Integer> stream) {
+        Stream<Integer> result = stream.filter(x -> x % 2 == 0).limit(10);
+        int result1 = result.mapToInt(Integer::intValue).sum();
+        if (result != null) {
+            return result1;
+        } else {
+            return 0;
+        }
+    }
+}
+\end{lstlisting}
+\section*{Aufgabe 3}
+\begin{lstlisting}
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
+class Person implements Serializable {
+	private String firstname;
+	private String lastname;
+	private String sortname;
+	public Person() { }
+	public Person(String firstname, String lastname) {
+		this.firstname = firstname;
+		this.lastname = lastname;
+		updateSortname();
+	}
+	public String getFirstname() {
+		return firstname;
+	}
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+		updateSortname();
+	}
+	public String getLastname() {
+		return lastname;
+	}
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+		updateSortname();
+	}
+	public String getSortname() {
+		return sortname;
+	}
+	public void updateSortname() {
+		sortname = lastname + firstname;
+	}
+	@Override
+	public String toString() {
+		return firstname + " " + lastname + " (" + sortname + ")";
+	}
+	public static List<Person> load(String filename) throws IOException {
+		List<Person> persons = new ArrayList<>();
+		DataInputStream f = new DataInputStream(new BufferedInputStream(new FileInputStream(filename)));
+		try{
+			while(f != null){
+				try{
+					persons.add(load(f));
+				}catch (EOFException e){
+					break;
+				}
+			}
+		} catch( FileNotFoundException e){
+			System.out.print("File not found!");
+		}catch (IOException e){
+			System.out.print("End of File");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}finally {
+			f.close();
+		}
+		return persons;
+	}
+	public static Person load(DataInputStream in) throws IOException, ClassNotFoundException {
+		Person person = null;
+		ObjectInputStream o = new ObjectInputStream(in);
+		if(in != null){
+			person=(Person) o.readObject();
+		}
+		return person;
+	}
+	public static void save(String filename, List<Person> list) throws IOException {
+		DataOutputStream f = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(filename)));
+		try{
+			for(int i = 0; i<list.size();i++){
+				save(f, list.get(i));
+			}
+		}catch(IOException e){
+			System.out.print(e);
+		}finally {
+			f.close();
+		}
+	}
+	public static void save(DataOutputStream out, Person person) throws IOException {
+		ObjectOutputStream o = new ObjectOutputStream(out);
+		o.writeObject(person);
+	}
+	public static List<Person> unserialize(String filename) throws IOException, ClassNotFoundException {
+		List<Person> persons = new ArrayList<>();
+		DataInputStream f = new DataInputStream(new BufferedInputStream(new FileInputStream(filename)));
+		ObjectInputStream o = new ObjectInputStream(f);
+		try{
+			while(f != null){
+				try{
+					persons.add((Person)o.readObject());
+				}catch (EOFException e){
+					break;
+				}
+			}
+		} catch( FileNotFoundException e){
+			System.out.print("File not found!");
+		}catch (IOException e){
+			System.out.print(e);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}finally {
+			f.close();
+		}
+		return persons;
+	}
+	public static void serialize(String filename, List<Person> persons) throws IOException {
+		DataOutputStream f = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(filename)));
+		ObjectOutputStream o = new ObjectOutputStream(f);
+		try{
+			for(int i = 0; i<persons.size();i++){
+				o.writeObject(persons.get(i));
+			}
+		}catch(IOException e){
+			System.out.print("Error initialize Output123");
+		}finally {
+			f.close();
+			o.close();
+		}
+	}
+}
+public class PersonTest {
+	public static void main(String[] args) throws IOException, ClassNotFoundException {
+		List<Person> persons = new ArrayList<>();
+		persons.add(new Person("Willy", "Wonka"));
+		persons.add(new Person("Charlie", "Bucket"));
+		persons.add(new Person("Grandpa", "Joe"));
+		System.out.println(persons);
+		
+		Person.save("persons.sav", persons);
+		persons = Person.load("persons.sav");
+		System.out.println(persons);
+		Person.serialize("persons.ser", persons);
+		persons = Person.unserialize("persons.ser");
+		System.out.println(persons);
+	}
+
+}
+\end{lstlisting}
+\end{document}
