@@ -10,7 +10,6 @@ public class LectureDADA {
 			// task 2
 			Lecture.saveText("dada.txt", dada);
 			dada = Lecture.loadText("dada.txt");
-			//System.out.println(dada);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

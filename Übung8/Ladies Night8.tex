@@ -1,0 +1,403 @@
+\documentclass[12pt,a4paper,oneside,ngerman]{article} 
+\usepackage[left=3cm,right=3cm,top=2.5cm]{geometry} % Groesse der Seitenraender definieren
+\usepackage[utf8]{inputenc} % utf8 encoding
+\usepackage{hyperref}
+\usepackage{ngerman}[babel]
+\usepackage{graphicx}
+\usepackage{tikz} % Automaten, Graphen, ... zeichnen
+\usepackage{tikz-qtree} % Paket fuer Tikz Graphen-Baeume
+\usetikzlibrary{arrows,shapes,automata} % Bestimmte tikz-Befehle benutzen
+\usepackage{amsmath,amssymb} % Mathe-Formeln und -Ausdruecke
+\usepackage{listings} % Code-Ausschnitte einbinden
+\usepackage{xcolor} % Eigene Farben definieren
+\usepackage{colortbl} % Farben verwenden in Tabellen
+\usepackage{wrapfig} % Bilder von Text umfliessen lassen
+\usepackage{multicol} % Mehrspaltigen Text schreiben
+\usepackage{stmaryrd} % Fuer Symbole wie zu Beispiel Widerspruchspfeil
+\usepackage{caption}
+\usepackage{totpages}
+
+\usepackage{circuitikz}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{float}
+
+\lstset{language=Java,
+basicstyle=\small \ttfamily,
+keywordstyle=\color{javapurple}\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+numbers=left,
+numberstyle=\tiny\color{black},
+stepnumber=1,
+numbersep=10pt,
+tabsize=1,
+showspaces=false,
+showstringspaces=false,
+breaklines=true}
+\lstset{literate=%
+  {Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}1
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+}
+
+% Beliebige RGB Farben definieren:
+\definecolor{gold}{rgb}{0.83, 0.69, 0.15}
+\definecolor{magenta}{rgb}{0.79, 0.08, 0.48}
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+% Beliebige RGB Farben definieren:
+\definecolor{gold}{rgb}{0.83, 0.69, 0.15}
+\definecolor{magenta}{rgb}{0.79, 0.08, 0.48}
+
+% Titel in Kopfzeilen
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{20pt}
+
+% Seitenumbrueche werden nicht mehr eingerueckt
+\setlength{\parindent}{0em}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+%Variablen
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\newcommand{\fach}{Objektorientierte Modellierung und Programmierung}
+\newcommand{\dokumentenTitel}{Abgabe Uebungsblatt Nr.08}
+\newcommand{\Abgabe}{16.06.2020, 12:00 Uhr}
+\newcommand{\memberOne}{Marius Birk}
+\newcommand{\memberTwo}{Pieter Vogt}
+
+
+\newcommand{\tutor}{ Florian Brandt }
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+% Kopfzeile auf jeder Seite:
+\fancyhead[R]{\dokumentenTitel} % Dokument-Titel
+\fancyhead[C]{}
+\fancyhead[L]{\memberOne, \memberTwo} % Autorennamen
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+
+% Fußzeile auf jeder Seite:
+\fancyfoot[C]{Seite \thepage \ von \ref{TotPages}} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+% Nun beginnt das eigentliche Dokument
+\begin{document}
+	\thispagestyle{plain} % Keine Kopfzeile auf erster Seite, aber Seitenzahl wird angezeigt
+	
+	\begin{multicols}{2} % Beginnt zweispaltigen Text fuer Header auf erster Seite
+		\hspace{-1cm} % Linken Header-Teil 1cm nach links schieben.
+		% Tabelle fuer linke Seite vom Header der ersten Seite
+		\begin{tabular}{ll} % Mit l werden die Eintraege linksbuendig
+			Autoren: & \memberOne \\ % Zwischen jeder Spalte ein & einfuegen
+			& \memberTwo \\
+% beendet eine Tabellenzeile 
+			Tutor: & \tutor \\  
+		\end{tabular}
+		
+		\columnbreak % Nun beginnt die rechte Seite des Headers
+		\hspace{-1cm} % Rechten Header-Teil 1cm nach links schieben.
+		% Tabelle fuer rechte Seite vom Header der ersten Seite
+		\begin{tabular}{ll} % p{1cm} bewirkt, dass die rechte Spalte 6cm breit ist.
+			Abgabe: & \Abgabe \\ % Zwischen jeder Spalte ein & einfuege
+			Smileys: &  
+			%Mit diesem Befehl wird die Zeilenhoehe der folgenden Tabelle um 20% erhoeht.   
+			\renewcommand{\arraystretch}{1.2} 
+			% Nun kommt eine innere Tabelle in der aeusseren Tabelle, mit der eine Punktetabelle fuer den Tutor erstellt wird:  
+			\begin{tabular}{|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|}
+				\hline A1 & A2 & A3 &$\sum\limits^{ }$ \\ \hline
+				& & & \\ \hline    
+			\end{tabular} \\
+		\end{tabular}
+		
+	\end{multicols} % Beendet zweispaltigen Text
+	
+	\begin{center}
+		\Large{\fach} \\
+		\LARGE{\dokumentenTitel} \\
+		\small
+		$($Alle allgemeinen Definitionen aus der Vorlesung haben in diesem Dokument bestand, es sei den sie erhalten eine explizit andere Definition.$)$
+	\end{center}
+
+
+%~~~~~DOKUMENT ANFANG~~~~~%
+
+%~~~~~Aufgabe 1
+\section*{Aufgabe 1 / Aufgabe 2}
+\begin{lstlisting}
+	import java.io.*;
+	import java.nio.charset.Charset;
+	import java.util.ArrayList;
+	import java.util.List;
+	
+	public class Lecture {
+		private String number = "";
+		private String title = "";
+		private String shortTitle = "";
+		private String semester = "";
+		private List<Lecturer> lecturers = new ArrayList<>();
+		private List<Date> schedule = new ArrayList<>();
+	
+		public Lecture(String number, String title, String shortTitle, String semester) {
+			super();
+			this.number = number;
+			this.title = title;
+			this.shortTitle = shortTitle;
+			this.semester = semester;
+		}
+	
+		public String getNumber() {
+			return number;
+		}
+	
+		public void setNumber(String number) {
+			this.number = number;
+		}
+	
+		public String getTitle() {
+			return title;
+		}
+	
+		public void setTitle(String title) {
+			this.title = title;
+		}
+	
+		public String getShortTitle() {
+			return shortTitle;
+		}
+	
+		public void setShortTitle(String shortTitle) {
+			this.shortTitle = shortTitle;
+		}
+	
+		public String getSemester() {
+			return semester;
+		}
+	
+		public void setSemester(String semester) {
+			this.semester = semester;
+		}
+	
+		public List<Lecturer> getLecturers() {
+			return lecturers;
+		}
+	
+		public List<Date> getSchedule() {
+			return schedule;
+		}
+		
+		@Override
+		public String toString() {
+			StringBuilder result = new StringBuilder();
+			result.append(number);
+			result.append(": ");
+			result.append(title);
+			result.append(" (");
+			result.append(shortTitle);
+			result.append("), ");
+			result.append(semester);
+			result.append("\n\t");
+			for (int i = 0; i < lecturers.size(); i++) {
+				if (i > 0) {
+					result.append(", ");
+				}
+				result.append(lecturers.get(i));
+			}
+			for (Date date : schedule) {
+				result.append("\n\t- ");
+				result.append(date);
+			}
+			result.append("\n");
+			return result.toString();
+		}
+		public static Lecture load(String filename) throws IOException {
+			Lecture result = null;
+			InputStream in = null;
+			try {
+				in = new FileInputStream(filename);
+				result = load(in);
+			} finally {
+				if (in != null) {
+					in.close();
+				}
+			}
+			return result;
+		}
+		public static Lecture load(InputStream in) throws IOException {
+			String number;
+			String title;
+			String shortTitle;
+			String semester;
+			StringBuilder builder = new StringBuilder();
+	
+			int ch;
+			int point = 33;
+			boolean bool=false;
+			String compare="";
+			int[] replace = new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32};
+			try{
+				while((ch = in.read()) != -1){
+					if(ch==0){
+						continue;
+					}else{
+						for(int i = 0; i<=replace.length-1;i++){
+							if(ch==replace[i]){
+								ch=33;
+								bool=true;
+							}else{
+								bool=false;
+							}
+						}
+					}
+					builder.append((char) ch);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			String[] split = builder.toString().split("!");
+			number =split[1];
+			title = split[2]+" "+split[3]+" "+split[4]+" "+split[5]+" "+split[6];
+			shortTitle= split[7];
+			semester= split[8];
+	
+			Lecture lect = new Lecture(number, title, shortTitle, semester);
+	
+			Lecturer snape = new Lecturer(split[10],split[11]);
+					lect.lecturers.add(snape);
+			Lecturer umbridge = new Lecturer(split[12], split[13]);
+					lect.lecturers.add(umbridge);
+			Lecturer lupin= new Lecturer(split[14], split[15]);
+					lect.lecturers.add(lupin);
+			return lect;
+		}
+		
+		public static void saveText(String filename, Lecture data) throws IOException {
+			PrintWriter out = null;
+			try{
+				out = new PrintWriter(new FileOutputStream(filename));
+				out.print(data.getNumber()+"\n"+data.getTitle()+"\n"+data.getShortTitle()+"\n"+data.getSemester()+"\n"+data.getLecturers()+"\n"+data.getSchedule());
+			}catch(FileNotFoundException e){
+				e.printStackTrace();
+			}finally {
+				out.close();
+			}
+		}
+	
+		public static Lecture loadText(String filename) throws IOException {
+			BufferedReader in = null;
+			Lecture lect= null;
+			try{
+				in=new BufferedReader(new FileReader(filename));
+				String zeile = null;
+				ArrayList<String> tmp = new ArrayList<>();
+				while((zeile=in.readLine())!=null){
+					tmp.add(zeile);
+				}
+				lect = new Lecture(tmp.get(0), tmp.get(1), tmp.get(2), tmp.get(3));
+				String[] tmp2 = tmp.get(4).split(",");
+				tmp2[0]=tmp2[0].substring(1);
+				tmp2[tmp2.length-1]=tmp2[tmp2.length-1].substring(0, tmp2[tmp2.length-1].length()-1);
+	
+				for(int i = 0; i<=tmp2.length-1; i++){
+					String[] tmp3= tmp2[i].split(" ");
+					if(tmp3.length>2) {
+						lect.lecturers.add(new Lecturer(tmp3[tmp3.length-2], tmp3[tmp3.length-1]));
+					}else{
+						lect.lecturers.add(new Lecturer(tmp3[0], tmp3[1]));
+					}
+				}
+			}finally {
+				in.close();
+			}
+			return lect;
+		}
+	}	
+\end{lstlisting}
+
+\section*{Aufgabe 3}
+\subsection*{Klasse A3}
+\begin{lstlisting}
+	import java.io.BufferedReader;
+	import java.io.IOException;
+	import java.net.URL;
+	import java.net.URLConnection;
+	
+	public class A3 {
+		public static void main(String[] args) throws IOException {
+			String url = "https://uol.de/en/computingscience/se/publications";
+			Connect connect = new Connect(url);
+			BufferedReader in = null;
+			in = connect.connect();
+			connect.count(in);
+		}
+	}
+\end{lstlisting}
+\\ 
+\subsection*{Klasse Connect}
+\begin{lstlisting}
+import java.io.*;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+
+public class Connect {
+    private String url;
+    private int proceeding;
+    private int articel;
+    private int phdthesis;
+    private String input;
+    public Connect(String url) {
+        this.url =url;
+        proceeding =0;
+        articel = 0;
+        phdthesis = 0;
+    }
+    public BufferedReader connect() throws IOException {
+        URL web = new URL(url);
+        BufferedReader in=null;
+        StringBuilder inputLine = new StringBuilder();
+        try{
+            URLConnection connect = web.openConnection();
+            in = new BufferedReader(new InputStreamReader(connect.getInputStream()));
+
+        }catch(IOException e){
+            e.printStackTrace();
+        }finally{
+            return in;
+        }
+
+    }
+    public void count(BufferedReader in) throws IOException {
+        ArrayList<String> tmp = new ArrayList<>();
+        while((input=in.readLine())!= null){
+            tmp.add(input);
+        }
+        for(int i = 0; i<tmp.size();i++){
+            if(tmp.get(i).contains("inproceedings")){
+                proceeding+=1;
+            }
+            if(tmp.get(i).contains("[article]")){
+                articel+=1;
+            }
+            if(tmp.get(i).contains("[phdthesis]")){
+                phdthesis+=1;
+            }
+        }
+        System.out.print("proceeding: "+proceeding+", article: "+articel+", phdthesis: "+phdthesis);
+    }
+}
+
+\end{lstlisting}
+\end{document}

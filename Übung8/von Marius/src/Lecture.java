@@ -105,7 +105,7 @@ public class Lecture {
 		String shortTitle;
 		String semester;
 		StringBuilder builder = new StringBuilder();
-		DataInputStream tmp1 = new DataInputStream(in);
+
 		int ch;
 		int point = 33;
 		boolean bool=false;
@@ -126,7 +126,6 @@ public class Lecture {
 					}
 				}
 				builder.append((char) ch);
-
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -148,10 +147,6 @@ public class Lecture {
 		Lecturer lupin= new Lecturer(split[14], split[15]);
 				lect.lecturers.add(lupin);
 
-		for(int i = 16; i<split.length;i++){
-			System.out.println(split[i]);
-		}
-
 		return lect;
 	}
 	
@@ -165,7 +160,6 @@ public class Lecture {
 		}finally {
 			out.close();
 		}
-
 	}
 
 	public static Lecture loadText(String filename) throws IOException {
