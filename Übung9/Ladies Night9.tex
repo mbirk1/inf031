@@ -1,0 +1,471 @@
+\documentclass[12pt,a4paper,oneside,ngerman]{article} 
+\usepackage[left=3cm,right=3cm,top=2.5cm]{geometry} % Groesse der Seitenraender definieren
+\usepackage[utf8]{inputenc} % utf8 encoding
+\usepackage{hyperref}
+\usepackage{ngerman}[babel]
+\usepackage{graphicx}
+\usepackage{tikz} % Automaten, Graphen, ... zeichnen
+\usepackage{tikz-qtree} % Paket fuer Tikz Graphen-Baeume
+\usetikzlibrary{arrows,shapes,automata} % Bestimmte tikz-Befehle benutzen
+\usepackage{amsmath,amssymb} % Mathe-Formeln und -Ausdruecke
+\usepackage{listings} % Code-Ausschnitte einbinden
+\usepackage{xcolor} % Eigene Farben definieren
+\usepackage{colortbl} % Farben verwenden in Tabellen
+\usepackage{wrapfig} % Bilder von Text umfliessen lassen
+\usepackage{multicol} % Mehrspaltigen Text schreiben
+\usepackage{stmaryrd} % Fuer Symbole wie zu Beispiel Widerspruchspfeil
+\usepackage{caption}
+\usepackage{totpages}
+
+\usepackage{circuitikz}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{float}
+
+\lstset{language=Java,
+basicstyle=\small \ttfamily,
+keywordstyle=\color{javapurple}\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+numbers=left,
+numberstyle=\tiny\color{black},
+stepnumber=1,
+numbersep=10pt,
+tabsize=1,
+showspaces=false,
+showstringspaces=false,
+breaklines=true}
+\lstset{literate=%
+  {Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}1
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+}
+
+% Beliebige RGB Farben definieren:
+\definecolor{gold}{rgb}{0.83, 0.69, 0.15}
+\definecolor{magenta}{rgb}{0.79, 0.08, 0.48}
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+% Beliebige RGB Farben definieren:
+\definecolor{gold}{rgb}{0.83, 0.69, 0.15}
+\definecolor{magenta}{rgb}{0.79, 0.08, 0.48}
+
+% Titel in Kopfzeilen
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{20pt}
+
+% Seitenumbrueche werden nicht mehr eingerueckt
+\setlength{\parindent}{0em}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+%Variablen
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\newcommand{\fach}{Objektorientierte Modellierung und Programmierung}
+\newcommand{\dokumentenTitel}{Abgabe Uebungsblatt Nr.09}
+\newcommand{\Abgabe}{23.06.2020, 12:00 Uhr}
+\newcommand{\memberOne}{Marius Birk}
+\newcommand{\memberTwo}{Pieter Vogt}
+
+
+\newcommand{\tutor}{ Florian Brandt }
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+% Kopfzeile auf jeder Seite:
+\fancyhead[R]{\dokumentenTitel} % Dokument-Titel
+\fancyhead[C]{}
+\fancyhead[L]{\memberOne, \memberTwo} % Autorennamen
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+
+% Fußzeile auf jeder Seite:
+\fancyfoot[C]{Seite \thepage \ von \ref{TotPages}} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+% Nun beginnt das eigentliche Dokument
+\begin{document}
+	\thispagestyle{plain} % Keine Kopfzeile auf erster Seite, aber Seitenzahl wird angezeigt
+	
+	\begin{multicols}{2} % Beginnt zweispaltigen Text fuer Header auf erster Seite
+		\hspace{-1cm} % Linken Header-Teil 1cm nach links schieben.
+		% Tabelle fuer linke Seite vom Header der ersten Seite
+		\begin{tabular}{ll} % Mit l werden die Eintraege linksbuendig
+			Autoren: & \memberOne \\ % Zwischen jeder Spalte ein & einfuegen
+			& \memberTwo \\
+% beendet eine Tabellenzeile 
+			Tutor: & \tutor \\  
+		\end{tabular}
+		
+		\columnbreak % Nun beginnt die rechte Seite des Headers
+		\hspace{-1cm} % Rechten Header-Teil 1cm nach links schieben.
+		% Tabelle fuer rechte Seite vom Header der ersten Seite
+		\begin{tabular}{ll} % p{1cm} bewirkt, dass die rechte Spalte 6cm breit ist.
+			Abgabe: & \Abgabe \\ % Zwischen jeder Spalte ein & einfuege
+			Smileys: &  
+			%Mit diesem Befehl wird die Zeilenhoehe der folgenden Tabelle um 20% erhoeht.   
+			\renewcommand{\arraystretch}{1.2} 
+			% Nun kommt eine innere Tabelle in der aeusseren Tabelle, mit der eine Punktetabelle fuer den Tutor erstellt wird:  
+			\begin{tabular}{|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|}
+				\hline A1 & A2 & A3 &$\sum\limits^{ }$ \\ \hline
+				& & & \\ \hline    
+			\end{tabular} \\
+		\end{tabular}
+		
+	\end{multicols} % Beendet zweispaltigen Text
+	
+	\begin{center}
+		\Large{\fach} \\
+		\LARGE{\dokumentenTitel} \\
+		\small
+		$($Alle allgemeinen Definitionen aus der Vorlesung haben in diesem Dokument bestand, es sei den sie erhalten eine explizit andere Definition.$)$
+	\end{center}
+
+
+%~~~~~DOKUMENT ANFANG~~~~~%
+
+%~~~~~Aufgabe 1
+\section*{Aufgabe 1}
+\begin{lstlisting}
+package sample;
+import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.control.Slider;
+import javafx.scene.layout.VBox;
+
+public class Main extends Application {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        //Initialize Components
+        Rectangle rect = new Rectangle();
+        Slider red = new Slider();
+        Slider green = new Slider();
+        Slider blue = new Slider();
+        VBox vBox = new VBox();
+        ObservableList list = vBox.getChildren();
+
+        rect.setHeight(160);
+        rect.setWidth(300);
+
+        red.setMin(0);
+        red.setMax(255);
+        red.setValue(0);
+        red.setShowTickLabels(true);
+        red.setShowTickMarks(true);
+        red.setMajorTickUnit(25);
+        red.setMinorTickCount(5);
+        red.setBlockIncrement(25);
+        red.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+
+        green.setMin(0);
+        green.setMax(255);
+        green.setValue(0);
+        green.setShowTickLabels(true);
+        green.setShowTickMarks(true);
+        green.setMajorTickUnit(25);
+        green.setMinorTickCount(5);
+        green.setBlockIncrement(25);
+        green.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
+
+        blue.setMin(0);
+        blue.setMax(255);
+        blue.setValue(0);
+        blue.setShowTickLabels(true);
+        blue.setShowTickMarks(true);
+        blue.setMajorTickUnit(25);
+        blue.setMinorTickCount(5);
+        blue.setBlockIncrement(25);
+        blue.setBackground(new Background(new BackgroundFill(Color.BLUE, CornerRadii.EMPTY, Insets.EMPTY)));
+
+        ChangeListener<Object> updateListener = (obs, oldValue, newValue) -> {
+            int cRed   = (int) red.getValue();
+            int cGreen   = (int) green.getValue();
+            int cBlue   = (int) blue.getValue();
+            rect.setFill(Color.rgb(cRed, cGreen, cBlue));
+        };
+
+        red.valueProperty().addListener(updateListener);
+        green.valueProperty().addListener(updateListener);
+        blue.valueProperty().addListener(updateListener);
+
+        vBox.setSpacing(10);
+        vBox.setMargin(rect, new Insets(20,20,20,20));
+        vBox.setMargin(red, new Insets(20,20,20,20));
+        vBox.setMargin(green, new Insets(20,20,20,20));
+        vBox.setMargin(blue, new Insets(20,20,20,20));
+        list.addAll(rect, red, green, blue);
+
+        Scene scene = new Scene(vBox);
+        primaryStage.setTitle("Color-Mixer");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+
+\end{lstlisting}
+\section*{Aufgabe 2}
+\begin{lstlisting}
+	import javafx.application.Application;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.StrokeType;
+import javafx.stage.Stage;
+
+
+
+public class Lights extends Application {
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+    static int randomNumber(){
+        int size = (int)(Math.random()*10);
+
+        while (size < 2){
+            size = (int)(Math.random()*10);
+        }
+        return size;
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        int size = randomNumber();
+        Rectangle[][] arrRect = new Rectangle[size][size];
+        for(int j= 0; j< arrRect.length;j++){
+            for(int i = 0; i < arrRect.length; i++)
+            {
+                Rectangle rect = new Rectangle();
+                rect.setFill(Color.WHITE);
+                rect.setWidth(100);
+                rect.setHeight(100);
+                rect.setStrokeType(StrokeType.INSIDE);
+                rect.setStroke(Color.BLACK);
+                arrRect[i][j] = rect;
+            }
+        }
+
+        GridPane grid = new GridPane();
+        for(int j=0; j<arrRect.length;j++){
+            for(int i = 0; i<arrRect.length;i++){
+                grid.add(arrRect[j][i], j, i);
+            }
+        }
+        for(int j =0; j<arrRect.length;j++){
+            for(int i = 0; i<arrRect.length;i++){
+                int finalI = i;
+                int finalJ = j;
+                arrRect[i][j].setOnMouseClicked(new EventHandler<javafx.scene.input.MouseEvent>() {
+                    @Override
+                    public void handle(javafx.scene.input.MouseEvent mouseEvent) {
+                        if (arrRect[finalI][finalJ].getFill() == Color.YELLOW) {
+                            arrRect[finalI][finalJ].setFill(Color.WHITE);
+
+                        } else {
+                            arrRect[finalI][finalJ].setFill(Color.YELLOW);
+                        }
+                        try {
+                            if (arrRect[finalI][finalJ + 1].getFill() == Color.YELLOW) {
+                                arrRect[finalI][finalJ + 1].setFill(Color.WHITE);
+                            } else {
+                                arrRect[finalI][finalJ + 1].setFill(Color.YELLOW);
+                            }
+                            if (arrRect[finalI + 1][finalJ].getFill() == Color.YELLOW) {
+                                arrRect[finalI + 1][finalJ].setFill(Color.WHITE);
+                            } else {
+                                arrRect[finalI + 1][finalJ].setFill(Color.YELLOW);
+                            }
+                        } catch (ArrayIndexOutOfBoundsException e) {
+
+                        }
+                        if (arrRect[finalI][finalJ - 1].getFill() == Color.YELLOW) {
+                            arrRect[finalI][finalJ - 1].setFill(Color.WHITE);
+                        } else {
+                            arrRect[finalI][finalJ - 1].setFill(Color.YELLOW);
+                        }
+                        if (finalI > 1) {
+                            if (arrRect[finalI - 1][finalJ].getFill() == Color.YELLOW) {
+                                arrRect[finalI - 1][finalJ].setFill(Color.WHITE);
+                            } else {
+                                arrRect[finalI - 1][finalJ].setFill(Color.YELLOW);
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+
+        Scene scene = new Scene(grid, 200, 100);
+
+        primaryStage.setHeight((double) size*arrRect[0][0].getHeight()+60);
+        primaryStage.setWidth((double) size*arrRect[0][0].getWidth()+40);
+        primaryStage.setTitle("Lights");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+}
+
+\end{lstlisting}
+\section*{Aufgabe 3}
+\subsection*{Captain}
+\begin{lstlisting}
+	public abstract class Captain {
+	
+		protected Ship ship;
+		
+		public Captain(Ship ship) {
+			super();
+			this.ship = ship;
+		}
+	
+		/**
+		 * Gibt ein Kommando an das Schiff.
+		 * Dieses Kommando wird erst auf der Konsole ausgegeben
+		 * und anschliessend wird die entsprechende Methode des
+		 * Schiffs aufgerufen.
+		 */
+		public abstract void commandShip();
+	
+	}
+	
+\end{lstlisting}
+\\ 
+\subsection*{Klasse Observable}
+\begin{lstlisting}
+	import java.lang.reflect.Array;
+	import java.util.ArrayList;
+	
+	public abstract class Observable implements Observer{
+		private ArrayList<Observer> observers;
+		public Observable() {
+			observers = new ArrayList<>();
+		}
+	
+		public void addObserver(Observer obs){
+			observers.add(obs);
+		}
+		public void removeObserver(Observer obs){
+			observers.remove(obs);
+		}
+	
+		public void setChanged(ShipEvent what){
+	
+		}
+		public void clearChanged(){
+	
+		}
+		public boolean isChanged(){
+			return true;
+		}
+		public void notifyObservers(ShipEvent what){
+			for(Observer o : observers){
+				o.update(this, what);
+			}
+		}
+		@Override
+		public void update(Observable who, ShipEvent what) {
+			who.setChanged(what);
+		}
+	}
+
+\end{lstlisting}
+\subsection*{Klasse Ship}
+\begin{lstlisting}
+	public class Ship extends Observable{
+    private ShipEvent what;
+    public void setShipEvent(ShipEvent what){
+        this.what = what;
+        notifyObservers(what);
+    }
+}
+\end{lstlisting}
+\subsection*{Drunken Pirate}
+\begin{lstlisting}
+	import java.beans.PropertyChangeListener;
+import java.util.Properties;
+import java.util.Random;
+
+public class DrunkenPirate extends Captain{
+    private int lastPick=0;
+    private boolean cannon = false;
+    private boolean sails = false;
+
+
+    public DrunkenPirate(Ship ship) {
+        super(ship);
+    }
+
+    @Override
+    public void commandShip() {
+        int pick = new Random().nextInt(ShipEvent.values().length);
+        while(pick==lastPick){
+            pick = new Random().nextInt(ShipEvent.values().length);
+        }
+        if(ShipEvent.values()[pick].equals(ShipEvent.SET_SAILS)){
+            if(sails == false){
+                System.out.println(ShipEvent.values()[pick]);
+                sails= true;
+            }
+        }else if(ShipEvent.values()[pick].equals(ShipEvent.STRIKE_SAILS)){
+            if(sails==true){
+                System.out.println(ShipEvent.values()[pick]);
+                sails = false;
+            }
+        }else if(ShipEvent.values()[pick].equals(ShipEvent.LOAD_CANNONS)){
+            if(cannon==false){
+                System.out.println(ShipEvent.values()[pick]);
+                cannon=true;
+            }
+        }else if(ShipEvent.values()[pick].equals(ShipEvent.FIRE_CANNONS)){
+            if(cannon==true){
+                System.out.println(ShipEvent.values()[pick]);
+                cannon=false;
+            }
+        }else if(ShipEvent.values()[pick].equals(ShipEvent.NO_EVENT)||ShipEvent.values()[pick].equals(ShipEvent.TURN_LEFT)||ShipEvent.values()[pick].equals(ShipEvent.TURN_RIGHT)){
+            System.out.println(ShipEvent.values()[pick]);
+        }
+        lastPick = pick;
+    }
+
+}
+\end{lstlisting}
+\subsection*{ShipLog}
+\begin{lstlisting}
+	public class ShipLog implements Observer{
+    @Override
+    public void update(Observable who, ShipEvent what) {
+    }
+}
+\end{lstlisting}
+\end{document}
