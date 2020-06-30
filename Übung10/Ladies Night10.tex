@@ -1,0 +1,416 @@
+\documentclass[12pt,a4paper,oneside,ngerman]{article} 
+\usepackage[left=3cm,right=3cm,top=2.5cm]{geometry} % Groesse der Seitenraender definieren
+\usepackage[utf8]{inputenc} % utf8 encoding
+\usepackage{hyperref}
+\usepackage{ngerman}[babel]
+\usepackage{graphicx}
+\usepackage{tikz} % Automaten, Graphen, ... zeichnen
+\usepackage{tikz-qtree} % Paket fuer Tikz Graphen-Baeume
+\usetikzlibrary{arrows,shapes,automata} % Bestimmte tikz-Befehle benutzen
+\usepackage{amsmath,amssymb} % Mathe-Formeln und -Ausdruecke
+\usepackage{listings} % Code-Ausschnitte einbinden
+\usepackage{xcolor} % Eigene Farben definieren
+\usepackage{colortbl} % Farben verwenden in Tabellen
+\usepackage{wrapfig} % Bilder von Text umfliessen lassen
+\usepackage{multicol} % Mehrspaltigen Text schreiben
+\usepackage{stmaryrd} % Fuer Symbole wie zu Beispiel Widerspruchspfeil
+\usepackage{caption}
+\usepackage{totpages}
+
+\usepackage{circuitikz}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{float}
+
+\lstset{language=Java,
+basicstyle=\small \ttfamily,
+keywordstyle=\color{javapurple}\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+numbers=left,
+numberstyle=\tiny\color{black},
+stepnumber=1,
+numbersep=10pt,
+tabsize=1,
+showspaces=false,
+showstringspaces=false,
+breaklines=true}
+\lstset{literate=%
+  {Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}1
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+}
+
+% Beliebige RGB Farben definieren:
+\definecolor{gold}{rgb}{0.83, 0.69, 0.15}
+\definecolor{magenta}{rgb}{0.79, 0.08, 0.48}
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+% Beliebige RGB Farben definieren:
+\definecolor{gold}{rgb}{0.83, 0.69, 0.15}
+\definecolor{magenta}{rgb}{0.79, 0.08, 0.48}
+
+% Titel in Kopfzeilen
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{20pt}
+
+% Seitenumbrueche werden nicht mehr eingerueckt
+\setlength{\parindent}{0em}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+%Variablen
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\newcommand{\fach}{Objektorientierte Modellierung und Programmierung}
+\newcommand{\dokumentenTitel}{Abgabe Uebungsblatt Nr.10}
+\newcommand{\Abgabe}{30.06.2020, 12:00 Uhr}
+\newcommand{\memberOne}{Marius Birk}
+\newcommand{\memberTwo}{Pieter Vogt}
+
+
+\newcommand{\tutor}{ Florian Brandt }
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+% Kopfzeile auf jeder Seite:
+\fancyhead[R]{\dokumentenTitel} % Dokument-Titel
+\fancyhead[C]{}
+\fancyhead[L]{\memberOne, \memberTwo} % Autorennamen
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+
+% Fußzeile auf jeder Seite:
+\fancyfoot[C]{Seite \thepage \ von \ref{TotPages}} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+% Nun beginnt das eigentliche Dokument
+\begin{document}
+	\thispagestyle{plain} % Keine Kopfzeile auf erster Seite, aber Seitenzahl wird angezeigt
+	
+	\begin{multicols}{2} % Beginnt zweispaltigen Text fuer Header auf erster Seite
+		\hspace{-1cm} % Linken Header-Teil 1cm nach links schieben.
+		% Tabelle fuer linke Seite vom Header der ersten Seite
+		\begin{tabular}{ll} % Mit l werden die Eintraege linksbuendig
+			Autoren: & \memberOne \\ % Zwischen jeder Spalte ein & einfuegen
+			& \memberTwo \\
+% beendet eine Tabellenzeile 
+			Tutor: & \tutor \\  
+		\end{tabular}
+		
+		\columnbreak % Nun beginnt die rechte Seite des Headers
+		\hspace{-1cm} % Rechten Header-Teil 1cm nach links schieben.
+		% Tabelle fuer rechte Seite vom Header der ersten Seite
+		\begin{tabular}{ll} % p{1cm} bewirkt, dass die rechte Spalte 6cm breit ist.
+			Abgabe: & \Abgabe \\ % Zwischen jeder Spalte ein & einfuege
+			Smileys: &  
+			%Mit diesem Befehl wird die Zeilenhoehe der folgenden Tabelle um 20% erhoeht.   
+			\renewcommand{\arraystretch}{1.2} 
+			% Nun kommt eine innere Tabelle in der aeusseren Tabelle, mit der eine Punktetabelle fuer den Tutor erstellt wird:  
+			\begin{tabular}{|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|}
+				\hline A1 & A2 & A3 &$\sum\limits^{ }$ \\ \hline
+				& & & \\ \hline    
+			\end{tabular} \\
+		\end{tabular}
+		
+	\end{multicols} % Beendet zweispaltigen Text
+	
+	\begin{center}
+		\Large{\fach} \\
+		\LARGE{\dokumentenTitel} \\
+		\small
+		$($Alle allgemeinen Definitionen aus der Vorlesung haben in diesem Dokument bestand, es sei den sie erhalten eine explizit andere Definition.$)$
+	\end{center}
+
+
+%~~~~~DOKUMENT ANFANG~~~~~%
+
+%~~~~~Aufgabe 1
+\section*{Aufgabe 1}
+\begin{lstlisting}
+    import java.util.ArrayList;
+    import java.util.Scanner;
+    
+    public class SearchThread extends Thread{
+        private ArrayList<Integer> search;
+        private int searched;
+        private boolean found;
+        public SearchThread(ArrayList<Integer> second, int searched) {
+            search = second;
+            this.searched = searched;
+        }
+    
+        public void run(){
+            if(search.contains(searched)){
+                found = true;
+            }else {
+                found = false;
+            }
+        }
+        public static void main(String[] args){
+            int width= (int) (Math.random()*10);
+            int[] array = new int[width];
+            ArrayList<Integer> first = new ArrayList<>();
+            ArrayList<Integer> second = new ArrayList<>();
+            for(int i =0; i<array.length;i++){
+                double rand=Math.round(Math.random()*10);
+                array[i]=(int) rand;
+            }
+            for(int i=0; i<(array.length/2);i++){
+                 first.add(array[i]);
+            }
+            for(int i = array.length/2;i<array.length;i++){
+                second.add(array[i]);
+            }
+            System.out.print("Array: ");
+            for(int i = 0; i<array.length;i++){
+                System.out.print(array[i]+", ");
+            }
+            System.out.println();
+            Scanner in = new Scanner(System.in);
+            System.out.println("Eingabe: ");
+            int searched = in.nextInt();
+            
+            SearchThread search1 = new SearchThread(first, searched);
+            SearchThread search2 = new SearchThread(second, searched);
+            search1.start();
+            search2.start();
+    
+            try{
+                search1.join();
+                search2.join();
+            }catch (InterruptedException e){}
+            System.out.println(search1.getName()+": "+search1.found);
+            System.out.println(search2.getName()+": "+search2.found);
+    
+            if(search1.found==true || search2.found==true){
+                System.out.println("Found: true");
+            }else{
+                System.out.print("Found: false");
+            }
+        }
+    }
+    
+\end{lstlisting}
+\section*{Aufgabe 2}
+\subsection*{QuickSortThreaded}
+\begin{lstlisting}
+	public class QuickSortThreaded extends QuickSort implements Runnable{
+	private int[] numbers;
+	private int leftIndex;
+	private int rightIndex;
+	public QuickSortThreaded(int[] numbers, int leftIndex, int rightIndex) {
+		this.numbers = numbers;
+		this.leftIndex = leftIndex;
+		this.rightIndex = rightIndex;
+	}
+
+	/**
+	 * sortiert das uebergebene Array in aufsteigender Reihenfolge
+	 * gemaess dem QuickSort-Algorithmus (parallel!)
+	 */
+	public static void sort(int[] numbers) {
+		QuickSortThreaded left =new QuickSortThreaded(numbers, 0, numbers.length/2);
+		QuickSortThreaded right = new QuickSortThreaded(numbers, numbers.length/2, numbers.length);
+		Thread t1 = new Thread(left);
+		Thread t2 = new Thread(right);
+
+		t1.start();
+		t2.start();
+		try{
+			t1.join();
+			t2.join();
+		}catch (InterruptedException e){}
+		QuickSort.sort(numbers);
+	}
+
+	/**
+	 * der Quicksort-Algorithmus wird auf dem Array zwischen den
+	 * angegebenen Indizes ausgefuehrt
+	 */
+	protected void quickSort(int[] numbers, int leftIndex, int rightIndex) {
+		super.quickSort(numbers, leftIndex, rightIndex);
+	}
+
+	@Override
+	public void run() {
+		this.quickSort(numbers, leftIndex, rightIndex);
+	}
+}
+\end{lstlisting}
+\subsection*{QuickSort}
+\begin{lstlisting}
+    public class QuickSort {
+
+	/**
+	 * sortiert das uebergebene Array in aufsteigender Reihenfolge
+	 * gemaess dem QuickSort-Algorithmus
+	 */
+	public static void sort(int[] numbers) {
+		new QuickSort().quickSort(numbers, 0, numbers.length - 1);
+	}
+
+	/**
+	 * der Quicksort-Algorithmus wird auf dem Array zwischen den
+	 * angegebenen Indizes ausgefuehrt
+	 */
+	protected void quickSort(int[] numbers, int leftIndex, int rightIndex) {
+		if (leftIndex < rightIndex) {
+			int pivotIndex = divide(numbers, leftIndex, rightIndex);
+			quickSort(numbers, leftIndex, pivotIndex - 1);
+			quickSort(numbers, pivotIndex + 1, rightIndex);
+		}
+	}
+
+	/**
+	 * liefert den Index des Pivot-Elementes und ordnet das Array innerhalb
+	 * der angegebenen Indizes so um, dass alle Zahlen links vom Index
+	 * kleiner oder gleich und alle Zahlen rechts vom Index groesser
+	 * oder gleich dem Pivot-Element sind
+	 */
+	protected int divide(int[] numbers, int leftIndex, int rightIndex) {
+		int pivotIndex = choosePivotIndex(numbers, leftIndex, rightIndex);
+		int pivotValue = numbers[pivotIndex];
+		// das Pivot-Element kommt nach ganz rechts im Array
+		swap(numbers, pivotIndex, rightIndex);
+		int left = leftIndex - 1;
+		int right = rightIndex;
+		// ordne das Array so um, dass jeweils alle Elemente links vom
+		// Zeiger left kleiner und alle Elemente rechts vom Zeiger right
+		// groesser als das Pivot-Element sind
+		do {
+			left++;
+			while (left <= rightIndex && numbers[left] <= pivotValue)
+				left++;
+			right--;
+			while (right >= leftIndex && numbers[right] >= pivotValue)
+				right--;
+			if (left < right) {
+				swap(numbers, left, right);
+			}
+		} while (left < right);
+		// platziere das Pivot-Element an seine korrekte Position
+		if (left < rightIndex) {
+			swap(numbers, left, rightIndex);
+			return left;
+		} else {
+			return rightIndex;
+		}
+	}
+
+	/**
+	 * waehlt einen beliebigen Index zwischen den angegebenen Indizes
+	 */
+	protected int choosePivotIndex(int[] numbers, int leftIndex, int rightIndex) {
+		// in diesem Fall einfach der mittleren Index
+		return (leftIndex + rightIndex) / 2;
+	}
+
+	/**
+	 * tauscht die Elemente des Arrays an den angegebenen Indizes
+	 */
+	protected void swap(int[] numbers, int index1, int index2) {
+		if (index1 != index2) {
+			int tmp = numbers[index1];
+			numbers[index1] = numbers[index2];
+			numbers[index2] = tmp;
+		}
+	}
+	
+}
+
+\end{lstlisting}
+\subsection*{QuickSortTest}
+\begin{lstlisting}
+    public class QuickSortTest {
+
+	public static void main(String[] args) {
+		int[] numbers = {2, 3, 9, 33, -2, 4, 55, 66, -234};
+		print(numbers);
+		QuickSort.sort(numbers);
+		print(numbers);
+		
+		int[] numbers2 = {2, 3, 9, 33, -2, 4, 55, 66, -234};
+		print(numbers2);
+		QuickSortThreaded.sort(numbers2);
+		print(numbers2);
+	}
+	
+	private static void print(int[] numbers) {
+		for (int number : numbers) {
+			System.out.print(number + " ");
+		}
+		System.out.println();
+	}
+
+}
+
+\end{lstlisting}
+\section*{Aufgabe 3}
+\begin{lstlisting}
+    import java.awt.Color;
+
+    public class ImageFilterThreaded extends ImageFilter {
+    
+        @Override
+        protected Color[][] filterMatrix(float[][] filter) {
+            //TODO implement this
+            //MAtrix teilen um größe zu erhalten
+            return super.filterMatrix(filter);
+        }
+    
+    }        
+\end{lstlisting}
+\section{Aufgabe 4}
+\begin{lstlisting}
+import javax.swing.*;
+import java.io.ObjectOutputStream;
+
+public class NameOutput extends Thread {
+    private String name;
+    private int len;
+
+    public static void main(String[] args) throws InterruptedException {
+        int random = 3;
+        Thread[] arr = new Thread[random];
+        String[] names = new String[random];
+        int len = arr.length;
+
+        for(int i =0;i<arr.length;i++){
+            arr[i] = new Thread(new NameOutput());
+        }
+        for(int i =0; i<arr.length;i++){
+            names[i] = arr[i].getName();
+        }
+
+        while (true) {
+            synchronized (NameOutput.class) {
+
+
+            }
+        }
+    }
+//wait und notify sollen besser sein
+
+    public void run() {
+        while(true){
+            System.out.println(this.getName());
+            try {
+                sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+\end{lstlisting}
+\end{document}
