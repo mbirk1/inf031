@@ -1,0 +1,384 @@
+\documentclass[12pt,a4paper,oneside,ngerman]{article} 
+\usepackage[left=3cm,right=3cm,top=2.5cm]{geometry} % Groesse der Seitenraender definieren
+\usepackage[utf8]{inputenc} % utf8 encoding
+\usepackage{hyperref}
+\usepackage{ngerman}[babel]
+\usepackage{graphicx}
+\usepackage{tikz} % Automaten, Graphen, ... zeichnen
+\usepackage{tikz-qtree} % Paket fuer Tikz Graphen-Baeume
+\usetikzlibrary{arrows,shapes,automata} % Bestimmte tikz-Befehle benutzen
+\usepackage{amsmath,amssymb} % Mathe-Formeln und -Ausdruecke
+\usepackage{listings} % Code-Ausschnitte einbinden
+\usepackage{xcolor} % Eigene Farben definieren
+\usepackage{colortbl} % Farben verwenden in Tabellen
+\usepackage{wrapfig} % Bilder von Text umfliessen lassen
+\usepackage{multicol} % Mehrspaltigen Text schreiben
+\usepackage{stmaryrd} % Fuer Symbole wie zu Beispiel Widerspruchspfeil
+\usepackage{caption}
+\usepackage{totpages}
+
+\usepackage{circuitikz}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{float}
+
+\lstset{language=Java,
+basicstyle=\small \ttfamily,
+keywordstyle=\color{javapurple}\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+numbers=left,
+numberstyle=\tiny\color{black},
+stepnumber=1,
+numbersep=10pt,
+tabsize=1,
+showspaces=false,
+showstringspaces=false,
+breaklines=true}
+\lstset{literate=%
+  {Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}1
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+}
+
+% Beliebige RGB Farben definieren:
+\definecolor{gold}{rgb}{0.83, 0.69, 0.15}
+\definecolor{magenta}{rgb}{0.79, 0.08, 0.48}
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+% Beliebige RGB Farben definieren:
+\definecolor{gold}{rgb}{0.83, 0.69, 0.15}
+\definecolor{magenta}{rgb}{0.79, 0.08, 0.48}
+
+% Titel in Kopfzeilen
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{20pt}
+
+% Seitenumbrueche werden nicht mehr eingerueckt
+\setlength{\parindent}{0em}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+%Variablen
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\newcommand{\fach}{Objektorientierte Modellierung und Programmierung}
+\newcommand{\dokumentenTitel}{Abgabe Uebungsblatt Nr.10}
+\newcommand{\Abgabe}{07.07.2020, 12:00 Uhr}
+\newcommand{\memberOne}{Marius Birk}
+\newcommand{\memberTwo}{Pieter Vogt}
+
+
+\newcommand{\tutor}{ Florian Brandt }
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+% Kopfzeile auf jeder Seite:
+\fancyhead[R]{\dokumentenTitel} % Dokument-Titel
+\fancyhead[C]{}
+\fancyhead[L]{\memberOne, \memberTwo} % Autorennamen
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+
+% Fußzeile auf jeder Seite:
+\fancyfoot[C]{Seite \thepage \ von \ref{TotPages}} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+% Nun beginnt das eigentliche Dokument
+\begin{document}
+	\thispagestyle{plain} % Keine Kopfzeile auf erster Seite, aber Seitenzahl wird angezeigt
+	
+	\begin{multicols}{2} % Beginnt zweispaltigen Text fuer Header auf erster Seite
+		\hspace{-1cm} % Linken Header-Teil 1cm nach links schieben.
+		% Tabelle fuer linke Seite vom Header der ersten Seite
+		\begin{tabular}{ll} % Mit l werden die Eintraege linksbuendig
+			Autoren: & \memberOne \\ % Zwischen jeder Spalte ein & einfuegen
+			& \memberTwo \\
+% beendet eine Tabellenzeile 
+			Tutor: & \tutor \\  
+		\end{tabular}
+		
+		\columnbreak % Nun beginnt die rechte Seite des Headers
+		\hspace{-1cm} % Rechten Header-Teil 1cm nach links schieben.
+		% Tabelle fuer rechte Seite vom Header der ersten Seite
+		\begin{tabular}{ll} % p{1cm} bewirkt, dass die rechte Spalte 6cm breit ist.
+			Abgabe: & \Abgabe \\ % Zwischen jeder Spalte ein & einfuege
+			Smileys: &  
+			%Mit diesem Befehl wird die Zeilenhoehe der folgenden Tabelle um 20% erhoeht.   
+			\renewcommand{\arraystretch}{1.2} 
+			% Nun kommt eine innere Tabelle in der aeusseren Tabelle, mit der eine Punktetabelle fuer den Tutor erstellt wird:  
+			\begin{tabular}{|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|}
+				\hline A1 & A2 & A3 &$\sum\limits^{ }$ \\ \hline
+				& & & \\ \hline    
+			\end{tabular} \\
+		\end{tabular}
+		
+	\end{multicols} % Beendet zweispaltigen Text
+	
+	\begin{center}
+		\Large{\fach} \\
+		\LARGE{\dokumentenTitel} \\
+		\small
+		$($Alle allgemeinen Definitionen aus der Vorlesung haben in diesem Dokument bestand, es sei den sie erhalten eine explizit andere Definition.$)$
+	\end{center}
+
+
+%~~~~~DOKUMENT ANFANG~~~~~%
+
+%~~~~~Aufgabe 1
+\section*{Aufgabe 1}
+\begin{lstlisting}
+class Output extends Thread {
+	public void run() {
+		synchronized (InOut.getLock()) {
+			if (!InOut.isEntered()) {
+				try {
+					InOut.getLock().wait();
+				} catch (InterruptedException e) {
+				}
+			}
+			System.out.println(InOut.getValue() * InOut.getValue());
+		}
+	}
+}
+
+class Input extends Thread {
+
+	public void run() {
+		synchronized (InOut.getLock()) {
+			InOut.setValue(IO.readInt("Value: "));
+			InOut.setEntered(true);
+			InOut.getLock().notify();
+		}
+	}
+}
+
+public class InOut {
+
+	private static Object lock = new Object();
+	private static boolean entered = false;
+	private static int value = 0;
+	
+	public static Object getLock() {
+		return lock;
+	}
+	
+	public static boolean isEntered() {
+		return entered;
+	}
+	
+	public static void setEntered(boolean entered) {
+		InOut.entered = entered;
+	}
+	
+	public static int getValue() {
+		return value;
+	}
+	
+	public static void setValue(int value) {
+		InOut.value = value;
+	}
+
+	public static void main(String[] args) {
+		new Output().start();
+		new Input().start();
+	}
+
+}
+
+import java.util.concurrent.Semaphore;
+class OutputThreaded extends Thread {
+    static Semaphore semaphore = new Semaphore(1);
+    public void run() {
+        try {
+            semaphore.acquire();
+            System.out.println(InOut.getValue() * InOut.getValue());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }finally {
+            semaphore.release();
+        }
+    }
+}
+
+class InputThreaded extends Thread {
+    static Semaphore semaphore = new Semaphore(1);
+    public void run() {
+        try {
+            semaphore.acquire();
+            InOut.setValue(IO.readInt("Value: "));
+            InOut.setEntered(true);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }finally {
+            semaphore.release();
+        }
+    }
+}public class InOutThreaded {
+    private static Object lock = new Object();
+    private static boolean entered = false;
+    private static int value = 0;
+    public static boolean isEntered() {
+            return entered;
+        }
+    public static void setEntered(boolean entered) {
+            InOutThreaded.entered = entered;
+        }
+    public static int getValue() {
+            return value;
+        }
+    public static void setValue(int value) {
+            InOutThreaded.value = value;
+        }
+    public static void main(String[] args) {
+
+        new Output().start();
+        new Input().start();
+    }
+}
+\end{lstlisting}
+\section*{Aufgabe 2}
+\begin{lstlisting}
+	import java.util.concurrent.BrokenBarrierException;
+	import java.util.concurrent.CyclicBarrier;
+	
+	public class Barriers {
+	
+		private final static int NUMBER = 3;
+		public static CyclicBarrier barrier = new CyclicBarrier(NUMBER);
+	
+		public static void main(String[] args) {
+			NumberRunner[] runner = new NumberRunner[NUMBER];
+			for (int i = 0; i < NUMBER; i++) {
+				runner[i] = new NumberRunner(i);
+			}
+			for (int i = 0; i < NUMBER; i++) {
+				runner[i].start();
+			}
+		}
+	
+	}
+	class NumberRunner extends Thread {
+	
+		private int number;
+	
+		public NumberRunner(int n) {
+			number = n;
+		}
+		@Override
+		public void run() {
+			for (int i = 0; i < 100; i++) {
+				for(int j=0; j<10;j++){
+					System.out.println("Thread " + number + ": " + i+j);
+				}
+				if(i%10==0){
+					try {
+						Barriers.barrier.await();
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					} catch (BrokenBarrierException e) {
+						e.printStackTrace();
+					}
+				}
+	
+				try {
+					if(Barriers.barrier.await()==3) {
+						Barriers.barrier.reset();
+					}
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				} catch (BrokenBarrierException e) {
+					e.printStackTrace();
+				}
+			}
+			//in der aufgabe steht jeweils 10 ausgaben. Dürfen es auch weniger als 10 sein solange es nicht mehr als 10 sind?
+		}
+	}		
+\end{lstlisting}
+
+\section*{Aufgabe 3}
+\begin{lstlisting}
+    import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class KnapsackRecursive extends Knapsack {
+
+	public KnapsackRecursive(int capacity, Collection<Item> candidates) {
+		super(capacity, candidates);
+	}
+
+	@Override
+	public Selection pack() {
+		return new Selection();
+	}
+
+}
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
+public class KnapsackDynamic extends Knapsack {
+	
+	public KnapsackDynamic(int capacity, Collection<Item> candidates) {
+		super(capacity, candidates);
+	}
+
+	@Override
+	public Selection pack() {
+		//TODO: implement this
+		return new Selection();
+	}
+
+}
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class KnapsackGreedy extends Knapsack {
+
+	public KnapsackGreedy(int capacity, Collection<Item> candidates) {
+		super(capacity, candidates);
+	}
+
+	@Override
+	public Selection pack() {
+		Selection select = new Selection();
+		Selection test = new Selection();
+		Collections.sort(candidates, new Comparator<Item>() {
+			@Override
+			public int compare(Item o1, Item o2) {
+				return o1.getValue()-o2.getValue();
+			}
+		});
+		Collections.reverse(candidates);
+		while(capacity!=0){
+			if(capacity>=30){
+				select = new Selection(test, candidates.get(1));
+				capacity=capacity-30;
+			}else if(capacity<30 && capacity>= 5){
+				select = new Selection(select, candidates.get(2));
+				capacity=capacity-5;
+			}else if(capacity<5 && capacity>=1){
+				select = new Selection(select, candidates.get(0));
+				capacity=capacity-1;
+			}
+		}
+		return new Selection(select);
+	}
+}
+
+\end{lstlisting}
+\end{document}
